@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import HomePage from "./components/HomePage"
+import CategoryResult from "./components/Categories/CategoryResult"
+import SearchResult from "./components/SearchBar/SearchResult"
+import NotFound from "./components/NotFound"
+
 
 class App extends Component {
   render() {
@@ -8,6 +14,15 @@ class App extends Component {
         <header>
           <h1>Recyle</h1>
         </header>
+
+         <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/category-result" component={CategoryResult} />
+          <Route exact path="/search-result" component={SearchResult} />
+          <Route component={NotFound} />
+        </Switch>
+
+
       </div>
     );
   }
