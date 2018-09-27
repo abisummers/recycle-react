@@ -6,6 +6,7 @@ import CategoryResult from "./components/Categories/CategoryResult";
 import SearchResult from "./components/SearchBar/SearchResult";
 import NotFound from "./components/NotFound";
 import SignUp from "./components/User/SignUp";
+import Login from "./components/User/LogIn";
 
 class App extends Component {
   constructor(props) {
@@ -20,14 +21,15 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
       <div>
         <header>
           <NavLink exact to="/">
             Home
-          </NavLink>{" "}
-          */}
+          </NavLink>
           <NavLink to="/signup"> Sign up</NavLink>
+          <NavLink to="/login">Login</NavLink>
         </header>
 
         <Switch>
@@ -37,7 +39,19 @@ class App extends Component {
           <Route
             path="/signup"
             render={() => (
-              <SignUp onSignUp={userDoc => this.updateUser(userDoc)} />
+              <SignUp
+                // currentUser={currentUser}
+                onSignUp={userDoc => this.updateUser(userDoc)}
+              />
+            )}
+          />
+          <Route
+            path="/login"
+            render={() => (
+              <Login
+                currentUser={currentUser}
+                onLogin={userDoc => this.updateUser(userDoc)}
+              />
             )}
           />
           <Route component={NotFound} />
