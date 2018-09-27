@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import api from "../../api";
 
 class SignUp extends Component {
   constructor(props) {
@@ -21,6 +22,18 @@ class SignUp extends Component {
 
   submitSignupForm(event) {
     event.preventDefault();
+    console.log(this.state);
+    api
+      .post("/signup", this.state)
+      .then(res => {
+        console.log("sign up", res.data);
+        const { onSignUp } = this.props;
+        onSignUp(res.data.userDoc);
+      })
+      .catch(err => {
+        console.log(err);
+        alert("there was a mistake");
+      });
 
     this.setState({
       fullName: "",
