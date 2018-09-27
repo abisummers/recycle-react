@@ -1,7 +1,8 @@
-import React from "react";
+import React from "react"
+import api from "../api.js";
 
-function SearchResult() {
-  return <h1>Search Result</h1>;
+class SearchResult extends React.Component{
+    
 }
 
 export default SearchResult;
