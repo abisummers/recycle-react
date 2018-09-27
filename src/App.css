@@ -5,7 +5,6 @@ header {
 }
 
 header a {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -17,4 +16,9 @@ header a {
 
 h1 {
   text-align: center;
+}
+
+label,
+form button {
+  display: block;
 }
