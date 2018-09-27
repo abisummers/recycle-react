@@ -1,5 +1,6 @@
 import React from "react"
 
+
 function SearchResult(){
     return(
         <h1>blah</h1>
