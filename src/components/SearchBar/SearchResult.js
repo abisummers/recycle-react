@@ -1,9 +1,7 @@
-import React from "react"
+import React from "react";
 
-function SearchResult(){
-    return(
-        <h1>blah</h1>
-    )
+function SearchResult() {
+  return <h1>Search Result</h1>;
 }
 
 export default SearchResult;

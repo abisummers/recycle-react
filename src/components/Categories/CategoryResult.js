@@ -1,9 +1,7 @@
-import React from "react"
+import React from "react";
 
-function CategoryResult(){
-    return(
-        <h1>blah</h1>
-    )
+function CategoryResult() {
+  return <h1>Result by Catergory </h1>;
 }
 
 export default CategoryResult;
