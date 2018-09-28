@@ -1,35 +1,17 @@
 /*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-/* @font-face {
-    font-family: Poppins-Regular;
-    src: url('Poppins-Regular.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Medium;
-    src: url('Poppins-Medium.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Bold;
-    src: url('Poppins-Bold.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-SemiBold;
-    src: url('Poppins-SemiBold.ttf'); 
-  } */
-
-
-  /*//////////////////////////////////////////////////////////////////
-[ CONTAINER ]*/
-
-.login-container{
-    margin: 0px; 
-	padding: 0px; 
-    box-sizing: border-box;
-    height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+[ SEARCH RESULT ]*/
+.product-container{
+  border: 2px solid blue;
+  box-sizing: border-box;
+	margin: 10px auto 10px;
+	padding: 10px;
+	width: 80%; min-height: 300px;
+ 
 }
-
+.product-image{
+  float: left;
+  /* margin-right: 40px; */
+}
+.product-info{
+  border: 2px solid green;
+}

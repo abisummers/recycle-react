@@ -47,13 +47,15 @@ class SearchResult extends React.Component{
                 <ul>
                     {productsArray.map((oneProduct, index) =>
                         // <li>{ this.state.fields[oneKey] }</li>
-                        <li key={index}>
-                            <img src={oneProduct.fields.images}/>
-                            <h3>{oneProduct.produits}</h3>
+                        <li key={index} className="product-container">
+                            <img src={oneProduct.fields.images} className="product-image"/>
+                            <div className="product-info">
+                            <h3>{oneProduct.fields.produits}</h3>
                             <p>Type:{oneProduct.fields.typologie_des_dechets}</p>
                             <p>Qu'est-ce que j'en fais:{oneProduct.fields.qu_est_ce_que_j_en_fais}</p>
                             <p>Que va t'il devenir: {oneProduct.fields.que_va_t_il_devenir}</p>
-                            
+                            <p>Comment éviter ce type de dêchet: {oneProduct.fields.comment_eviter_de_le_produire}</p>
+                            </div>
                         </li>
                     )}
                 </ul>
