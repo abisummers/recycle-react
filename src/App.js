@@ -97,6 +97,10 @@ class App extends Component {
           />
           <Route component={NotFound} />
         </Switch>
+
+        <footer>
+          <p>Made by Manon, Julie and Abi</p>
+        </footer>
       </div>
     );
   }
