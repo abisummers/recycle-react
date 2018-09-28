@@ -44,6 +44,8 @@ class SignUp extends Component {
 
   render() {
     const { fullName, email, originalPassword } = this.state;
+    const { currentUser } = this.props;
+
     return (
       <section>
         <h1>Sign Up</h1>

@@ -9,6 +9,7 @@ import Login from "./components/User/LogIn";
 import "./CSS/App.css";
 import "./CSS/julie.css";
 import "./index.css";
+import api from "./api";
 
 class App extends Component {
   constructor(props) {
@@ -18,8 +19,34 @@ class App extends Component {
       currentUser: null
     };
   }
+  // checks to see if there is a logged in user when the page is loaded
+  componentDidMount() {
+    api
+      .get("/checklogin")
+      .then(res => {
+        console.log("check login", res.data);
+        this.updateUser(res.data.userDoc);
+      })
+      .catch(err => {
+        console.log(err);
+        alert("there was a problem");
+      });
+  }
+
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
+  }
+
+  logOutClick() {
+    api
+      .delete("/logout")
+      .then(() => {
+        this.updateUser(null);
+      })
+      .catch(err => {
+        console.log(err);
+        alert("something went wrong");
+      });
   }
 
   render() {
@@ -30,12 +57,24 @@ class App extends Component {
           <NavLink exact to="/">
             Home
           </NavLink>
-          <NavLink to="/signup"> Sign up</NavLink>
-          <NavLink to="/login">Login</NavLink>
+
+          {!currentUser && <NavLink to="/signup"> Sign up</NavLink>}
+          {!currentUser && <NavLink to="/login">Login</NavLink>}
+
+          {currentUser && (
+            <NavLink to="/" onClick={() => this.logOutClick()}>
+              Logout
+            </NavLink>
+          )}
         </header>
 
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage currentUser={currentUser} />}
+          />
+
           <Route path="/category-result" component={CategoryResult} />
           <Route path="/search-result" component={SearchResult} />
           <Route
