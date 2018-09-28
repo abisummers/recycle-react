@@ -56,9 +56,8 @@ class App extends Component {
             Home
           </NavLink>
 
-          <NavLink to="/signup"> Sign up</NavLink>
-
-          <NavLink to="/login">Login</NavLink>
+          {!currentUser && <NavLink to="/signup"> Sign up</NavLink>}
+          {!currentUser && <NavLink to="/login">Login</NavLink>}
 
           {currentUser && (
             <NavLink to="/" onClick={() => this.logOutClick()}>
