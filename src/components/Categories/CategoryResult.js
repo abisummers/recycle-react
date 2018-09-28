@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import api from "../api.js";
+import api from "../../api.js";
 
 class CategoryResult extends React.Component {
     constructor(props) {
