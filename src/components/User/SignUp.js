@@ -44,46 +44,47 @@ class SignUp extends Component {
 
   render() {
     const { fullName, email, originalPassword } = this.state;
-    const { currentUser } = this.props;
 
     return (
       <section>
-        <h1>Sign Up</h1>
-        <form onSubmit={event => this.submitSignupForm(event)}>
-          <label>
-            Full Name:
-            <input
-              onChange={event => this.signup(event)}
-              name="fullName"
-              value={fullName}
-              type="text"
-              placeholder="Enter your name"
-            />
-          </label>
+        <h2>Sign Up</h2>
+        <div className="log-sign-form">
+          <form onSubmit={event => this.submitSignupForm(event)}>
+            <label>
+              Full Name:
+              <input
+                onChange={event => this.signup(event)}
+                name="fullName"
+                value={fullName}
+                type="text"
+                placeholder="Enter your name"
+              />
+            </label>
 
-          <label>
-            Email:
-            <input
-              onChange={event => this.signup(event)}
-              name="email"
-              value={email}
-              type="email"
-              placeholder="hello@me.com"
-            />
-          </label>
+            <label>
+              Email:
+              <input
+                onChange={event => this.signup(event)}
+                name="email"
+                value={email}
+                type="email"
+                placeholder="hello@me.com"
+              />
+            </label>
 
-          <label>
-            Password:
-            <input
-              onChange={event => this.signup(event)}
-              name="originalPassword"
-              value={originalPassword}
-              type="password"
-              placeholder="it's a secret"
-            />
-          </label>
-          <button>Sign Up</button>
-        </form>
+            <label>
+              Password:
+              <input
+                onChange={event => this.signup(event)}
+                name="originalPassword"
+                value={originalPassword}
+                type="password"
+                placeholder="it's a secret"
+              />
+            </label>
+            <button>Sign Up</button>
+          </form>
+        </div>
       </section>
     );
   }
