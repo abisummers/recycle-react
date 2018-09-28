@@ -4,7 +4,7 @@ function HomePage(props) {
   const { currentUser } = props;
   return (
     <section>
-      <h1>Home</h1>
+      <h2>Home</h2>
       {currentUser && <p>Hi, {currentUser.fullName}</p>}
     </section>
   );
