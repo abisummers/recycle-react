@@ -61,3 +61,8 @@ h2 {
   border-radius: 5px;
   font-size: 15px;
 }
+
+.log-sign-form form > button:hover {
+  background-color: rgb(133, 189, 133);
+  color: white;
+}
