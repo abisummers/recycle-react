@@ -7,6 +7,7 @@ import SearchResult from "./components/SearchBar/SearchResult";
 import NotFound from "./components/NotFound";
 import SignUp from "./components/User/SignUp";
 import Login from "./components/User/LogIn";
+import api from "./api";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,18 @@ class App extends Component {
     this.setState({ currentUser: userDoc });
   }
 
+  logOutClick() {
+    api
+      .delete("/logout")
+      .then(() => {
+        this.updateUser(null);
+      })
+      .catch(err => {
+        console.log(err);
+        alert("something went wrong");
+      });
+  }
+
   render() {
     const { currentUser } = this.state;
     return (
@@ -28,14 +41,29 @@ class App extends Component {
           <NavLink exact to="/">
             Home
           </NavLink>
+
           <NavLink to="/signup"> Sign up</NavLink>
+
           <NavLink to="/login">Login</NavLink>
+
+          {currentUser && (
+            <NavLink to="/" onClick={() => this.logOutClick()}>
+              Logout
+            </NavLink>
+          )}
         </header>
 
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage currentUser={currentUser} />}
+          />
+
           <Route path="/category-result" component={CategoryResult} />
+
           <Route exact path="/search-result" component={SearchResult} />
+
           <Route
             path="/signup"
             render={() => (
