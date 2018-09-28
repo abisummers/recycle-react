@@ -44,31 +44,33 @@ class Login extends Component {
     return (
       <section className= "login-container">
         <h2>Login</h2>
-        <form onSubmit={event => this.handleSubmit(event)}>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              onChange={event => this.loginForm(event)}
-              value={email}
-              placeholder="hello@me.com"
-            />
-          </label>
+        <div className="log-sign-form">
+          <form onSubmit={event => this.handleSubmit(event)}>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                onChange={event => this.loginForm(event)}
+                value={email}
+                placeholder="hello@me.com"
+              />
+            </label>
 
-          <label>
-            Password
-            <input
-              type="password"
-              name="originalPassword"
-              onChange={event => this.loginForm(event)}
-              value={originalPassword}
-              placeholder="it's a secret"
-            />
-          </label>
+            <label>
+              Password:
+              <input
+                type="password"
+                name="originalPassword"
+                onChange={event => this.loginForm(event)}
+                value={originalPassword}
+                placeholder="it's a secret"
+              />
+            </label>
 
-          <button>Login</button>
-        </form>
+            <button>Login</button>
+          </form>
+        </div>
       </section>
     );
   }

@@ -22,3 +22,42 @@ label,
 form button {
   display: block;
 }
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* -----------------LOGIN/SIGNUP FORM -------------- */
+
+.log-sign-form {
+  width: 50%;
+  display: block;
+  text-align: center;
+  margin: auto;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.log-sign-form input {
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 5px 0;
+  border-radius: 1px;
+}
+
+.log-sign-form label {
+  display: block;
+  margin: 0px 0px 15px 0px;
+  margin: 20px;
+}
+
+.log-sign-form form > button {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+}
