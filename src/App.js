@@ -17,6 +17,20 @@ class App extends Component {
       currentUser: null
     };
   }
+  // checks to see if there is a logged in user when the page is loaded
+  componentDidMount() {
+    api
+      .get("/checklogin")
+      .then(res => {
+        console.log("check login", res.data);
+        this.updateUser(res.data.userDoc);
+      })
+      .catch(err => {
+        console.log(err);
+        alert("there was a problem");
+      });
+  }
+
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
   }
