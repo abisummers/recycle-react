@@ -27,8 +27,22 @@ h2 {
   text-align: center;
   text-transform: uppercase;
 }
+/* -----------------FOOTER ----------------- */
 
-/* -----------------LOGIN/SIGNUP FORM -------------- */
+footer {
+  background-color: rgb(133, 189, 133);
+  height: 40px;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* -----------------LOGIN/SIGNUP FORMS -------------- */
 
 .log-sign-form {
   width: 50%;
@@ -37,6 +51,7 @@ h2 {
   margin: auto;
   border: 1px black solid;
   border-radius: 5px;
+  margin-bottom: 60px;
 }
 
 .log-sign-form input {
@@ -65,4 +80,71 @@ h2 {
 .log-sign-form form > button:hover {
   background-color: rgb(133, 189, 133);
   color: white;
+}
+/* -------------------SEARCH FORM -------------------- */
+
+.search-form {
+  width: 80%;
+  border: black solid 1px;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+  height: 200px;
+}
+
+.search-form input {
+  width: 50%;
+  border-radius: 1px;
+  height: 40px;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.search-form button {
+  margin: auto;
+  padding: 20px 60px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.search-form button:hover {
+  border: 3px solid rgb(133, 189, 133);
+}
+/* ----------------HOME PAGE BUTTONS ----------------- */
+
+.row {
+  display: table;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.row > button {
+  display: table-cell;
+  width: 25%;
+  padding: 20px 40px;
+  border-radius: 5px;
+  height: 140px;
+  font-size: 20px;
+  margin-bottom: 60px;
+}
+
+.row > button:hover {
+  border: 3px solid rgb(133, 189, 133);
+}
+
+/* --------------FUN FACTS ------------------ */
+
+.funFact {
+  display: flex;
+  width: 50%;
+  margin: 40px auto;
+  justify-content: flex-end;
+}
+
+.funFact button {
+  border-radius: 5px;
+  margin-left: 20px;
 }
