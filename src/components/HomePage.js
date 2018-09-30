@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HomePage(props) {
   const { currentUser } = props;
@@ -20,19 +21,19 @@ function HomePage(props) {
       </div>
 
       <div className="row">
-        <button>PLASTIC</button>
+        <Link to="/">PLASTIC</Link>
 
-        <button>ELECTRONICS</button>
+        <Link to="/">ELECTRONICS</Link>
 
-        <button>COMPOST</button>
+        <Link to="/">COMPOST</Link>
       </div>
 
       <div className="row">
-        <button>GLASS</button>
+        <Link to="/">GLASS</Link>
 
-        <button>PAPER</button>
+        <Link to="/">PAPER</Link>
 
-        <button>SEE ALL </button>
+        <Link to="/all-categories">SEE ALL </Link>
       </div>
     </section>
   );
