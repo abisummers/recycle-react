@@ -38,7 +38,7 @@ h2 {
 footer {
   background-color: rgb(133, 189, 133);
   height: 40px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   right: 0;
   bottom: 0;
@@ -107,6 +107,10 @@ footer {
   font-size: 20px;
 }
 
+.search-form input:hover {
+  border: 3px solid rgb(133, 189, 133);
+}
+
 .search-form button {
   margin: auto;
   padding: 20px 60px;
@@ -127,7 +131,7 @@ footer {
   margin: auto;
 }
 
-.row > button {
+.row > a {
   display: table-cell;
   width: 25%;
   padding: 20px 40px;
@@ -135,9 +139,13 @@ footer {
   height: 140px;
   font-size: 20px;
   margin-bottom: 60px;
+  text-align: center;
+  border: black 1px solid;
+  text-decoration: none;
+  color: black;
 }
 
-.row > button:hover {
+.row > a:hover {
   border: 3px solid rgb(133, 189, 133);
 }
 
@@ -153,4 +161,8 @@ footer {
 .funFact button {
   border-radius: 5px;
   margin-left: 20px;
+}
+
+.funFact button:hover {
+  border: 3px solid rgb(133, 189, 133);
 }
