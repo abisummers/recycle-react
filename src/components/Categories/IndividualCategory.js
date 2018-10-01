@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NotFound from "../NotFound";
+import api from "../../api.js";
 
 const categories = [
   { label: "Bois", id: "bois" },
@@ -20,21 +21,47 @@ const categories = [
 ];
 
 class IndividualCategory extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      productCategory: []
+    };
+  }
+
+  componentDidMount() {
+    api
+      .get("/material/:id")
+      .then(response => {
+        // console.log("all items", response.data);
+        this.setState({ productCategory: response.data });
+      })
+      .catch(err => {
+        console.log(err);
+        alert("something went wrong");
+      });
+  }
+
   render() {
+    const { productCategory } = this.state;
+    console.log(productCategory);
+
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );
-    if (category) {
-      return (
-        <section>
-          <h2>Categories</h2>
-          <p>{this.props.match.params.id}</p>
-        </section>
-      );
-    } else {
-      return <NotFound what="category" />;
-    }
+
+    console.log(category);
+
+    return (
+      <section>
+        <h2>{category.label}</h2>
+        <ul>
+          {productCategory.map(oneCategory => (
+            <li key={oneCategory._id}>{oneCategory.fields.produits}</li>
+          ))}
+        </ul>
+      </section>
+    );
   }
 }
 
