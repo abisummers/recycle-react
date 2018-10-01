@@ -17,17 +17,19 @@ function HomePage(props) {
       </div>
 
       <div className="row">
-        <Link to="/" className="plastic">PLASTIC</Link>
+        <Link to="/material/plastiques">PLASTIC</Link>
 
-        <Link to="/">ELECTRONICS</Link>
+        <Link to="/material/dechets-electriques-et-electroniques">
+          ELECTRONICS
+        </Link>
 
-        <Link to="/">COMPOST</Link>
+        <Link to="/material/dechets-de-cuisine">COMPOST</Link>
       </div>
 
       <div className="row">
-        <Link to="/">GLASS</Link>
+        <Link to="/material/verre">GLASS</Link>
 
-        <Link to="/">PAPER</Link>
+        <Link to="/material/papiers-cartons">PAPER</Link>
 
         <Link to="/all-categories">SEE ALL </Link>
       </div>
