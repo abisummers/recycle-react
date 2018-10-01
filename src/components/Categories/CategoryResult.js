@@ -17,7 +17,7 @@ class CategoryResult extends React.Component {
   componentDidMount() {
     const { params } = this.props.match;
     api
-      .get(`/Results/${params.productId}`)
+      .get(`/results/${params.productId}`)
       .then(response => {
         console.log("Product details", response.data);
         this.setState(response.data);

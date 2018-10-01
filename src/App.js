@@ -6,6 +6,8 @@ import SearchResult from "./components/SearchBar/SearchResult";
 import NotFound from "./components/NotFound";
 import SignUp from "./components/User/SignUp";
 import Login from "./components/User/LogIn";
+import IndividualCategory from "./components/Categories/IndividualCategory";
+import AllCategories from "./components/Categories/AllCategories";
 import "./CSS/App.css";
 import "./CSS/julie.css";
 import "./index.css";
@@ -77,6 +79,10 @@ class App extends Component {
 
           <Route path="/category-result" component={CategoryResult} />
           <Route path="/search-result" component={SearchResult} />
+          <Route path="/all-categories" component={AllCategories} />
+
+          {/* link to caterogy page eg glass or plastic */}
+          <Route path="/material/:id" component={IndividualCategory} />
           <Route
             path="/signup"
             render={() => (
@@ -95,6 +101,7 @@ class App extends Component {
               />
             )}
           />
+
           <Route component={NotFound} />
         </Switch>
 
