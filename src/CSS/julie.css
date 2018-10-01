@@ -1,7 +1,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ SEARCH RESULT ]*/
 .product-container{
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 10px auto 10px;
@@ -17,9 +17,10 @@
   margin-right:5px;
 }
 .product-info{
-  border: 2px solid green;
+  /* border: 2px solid green; */
   width: 750px;
-  margin-left: 35px;
+  margin-left: 35px; 
+  
 }
 .product-title{
   margin: 0 auto;

@@ -13,12 +13,14 @@ import "./CSS/julie.css";
 import "./index.css";
 import api from "./api";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      inputValue: ""
     };
   }
   // checks to see if there is a logged in user when the page is loaded
@@ -34,6 +36,11 @@ class App extends Component {
         alert("there was a problem");
       });
   }
+
+  handleEvent(searchInput) {
+    this.setState({ inputValue : searchInput });
+    
+}
 
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
@@ -55,6 +62,12 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div>
+      <React.Fragment>
+      <style>
+      @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
+      </style>
+      </React.Fragment>
+
         <header>
           <NavLink exact to="/">
             Home
@@ -74,11 +87,13 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <HomePage currentUser={currentUser} />}
+            render={() => <HomePage currentUser={currentUser} handleEvent={(event)=>this.handleEvent(event)} />}
           />
 
           <Route path="/category-result" component={CategoryResult} />
-          <Route path="/search-result" component={SearchResult} />
+          <Route
+           path="/search-result" 
+          render={()=> <SearchResult inputValue={()=>this.state.inputValue} />}/>
           <Route path="/all-categories" component={AllCategories} />
 
           {/* link to caterogy page eg glass or plastic */}

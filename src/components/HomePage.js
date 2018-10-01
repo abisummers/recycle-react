@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar/SearchBar";
 
 function HomePage(props) {
   const { currentUser } = props;
@@ -12,16 +13,11 @@ function HomePage(props) {
       {currentUser && <p>Hi, {currentUser.fullName}</p>}
 
       <div className="search-form">
-        <form>
-          <label>
-            <input type="text" placeholder="Search here..." />
-          </label>
-          <button>Search</button>
-        </form>
+       <SearchBar handleEvent={(inputValue)=> props.handleEvent(inputValue)}/>
       </div>
 
       <div className="row">
-        <Link to="/">PLASTIC</Link>
+        <Link to="/" className="plastic">PLASTIC</Link>
 
         <Link to="/">ELECTRONICS</Link>
 

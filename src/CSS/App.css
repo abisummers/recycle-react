@@ -1,6 +1,7 @@
 body {
   height: 100%;
   position: relative;
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 header {
@@ -147,6 +148,10 @@ footer {
 
 .row > a:hover {
   border: 3px solid rgb(133, 189, 133);
+}
+.plastic{
+  background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+  background-size: cover;
 }
 
 /* --------------FUN FACTS ------------------ */
