@@ -50,11 +50,13 @@ class SearchResult extends React.Component{
                         <li key={index} className="product-container">
                             <img src={oneProduct.fields.images} className="product-image"/>
                             <div className="product-info">
-                            <h3>{oneProduct.fields.produits}</h3>
-                            <p>Type:{oneProduct.fields.typologie_des_dechets}</p>
-                            <p>Qu'est-ce que j'en fais:{oneProduct.fields.qu_est_ce_que_j_en_fais}</p>
-                            <p>Que va t'il devenir: {oneProduct.fields.que_va_t_il_devenir}</p>
-                            <p>Comment éviter ce type de dêchet: {oneProduct.fields.comment_eviter_de_le_produire}</p>
+                            <h3 className="product-title">{oneProduct.fields.produits}</h3>
+                            <p><b>Type:</b> {oneProduct.fields.typologie_des_dechets}</p>
+                            <p><b>Qu'est-ce que j'en fais:</b> {oneProduct.fields.qu_est_ce_que_j_en_fais}</p>
+                            <p><b>Que va t'il devenir:</b> {oneProduct.fields.que_va_t_il_devenir}</p>
+                            {oneProduct.fields.comment_eviter_de_le_produire  &&
+                            <p><b>Comment éviter ce type de dêchet:</b> {oneProduct.fields.comment_eviter_de_le_produire}</p>
+                            }
                             </div>
                         </li>
                     )}
