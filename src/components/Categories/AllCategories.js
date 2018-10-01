@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Link, Route, Switch } from "react-router-dom";
+
+import api from "../../api";
 
 const categories = [
   { label: "Bois", id: "bois" },
@@ -18,15 +21,48 @@ const categories = [
   { label: "Verre", id: "verre" }
 ];
 class AllCategories extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      productCategory: []
+    };
+  }
+
+  componentDidMount() {
+    api
+      .get("/material/:id")
+      .then(response => {
+        this.setState({ productCategory: response.data });
+      })
+      .catch(err => {
+        console.log(err);
+        alert("something went wrong");
+      });
+  }
+
   render() {
+    const { productCategory } = this.state;
+    console.log(productCategory);
+
+    const category = categories.find(
+      ({ id }) => id === this.props.match.params.id
+    );
+
+    console.log(category);
+
+    console.log(this.state);
     return (
       <section>
         <h2>All Categories </h2>
 
-        <ul>
-          {categories.map(({ label, id }) => (
-            <li key={id}>{label}</li>
+        <ul className="allCategories">
+          {categories.map(oneCategory => (
+            <li key={oneCategory._id}>
+              <Link to={`/material/${oneCategory.id}`}>
+                {oneCategory.label}
+              </Link>
+            </li>
           ))}
         </ul>
       </section>
