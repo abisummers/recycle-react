@@ -24,38 +24,33 @@ class SearchResult extends React.Component {
     }
 
 
-
-
-
-
     render() {
         const { productsArray } = this.state;
+        console.log("coucou", this.props)
         return (
             <div>
                 <section className="elements">
-                    <h1>Your result for {this.props.inputValue}</h1>
+                    <h1>Your result for {this.props.inputValue} </h1>
                     <ul>
-                        {productsArray.map((oneProduct, index) => 
-                        {oneProduct.fields.produits.toLowerCase().includes(this.props.inputValue.toLowerCase()) &&
+                        {productsArray.map((oneProduct, index) => {
+                         return( (oneProduct.fields.produits.toLowerCase().includes(this.props.inputValue.toLowerCase()) || oneProduct.fields.typologie_des_dechets.toLowerCase().includes(this.props.inputValue.toLowerCase())) &&
                             <section className="SearchResult-container">
                                 <li key={index} className="product-container">
                                     <img src={oneProduct.fields.images} className="product-image" />
                                     <div className="product-info">
                                         <h3 className="product-title">{oneProduct.fields.produits}</h3>
                                         <p><b>Type:</b> {oneProduct.fields.typologie_des_dechets}</p>
-                                        <p><b>Qu'est-ce que j'en fais:</b> {oneProduct.fields.qu_est_ce_que_j_en_fais}</p>
-                                        <p><b>Que va t'il devenir:</b> {oneProduct.fields.que_va_t_il_devenir}</p>
+                                        <p><b>Qu'est-ce que j'en fais ? :</b> {oneProduct.fields.qu_est_ce_que_j_en_fais}</p>
+                                        <p><b>Que va-t-il devenir ? :</b> {oneProduct.fields.que_va_t_il_devenir}</p>
                                         {oneProduct.fields.comment_eviter_de_le_produire &&
-                                            <p><b>Comment éviter ce type de dêchet:</b> {oneProduct.fields.comment_eviter_de_le_produire}</p>
+                                            <p><b>Comment éviter ce type de déchet:</b> {oneProduct.fields.comment_eviter_de_le_produire}</p>
                                         }
                                     </div>
                                 </li>
                             </section>
-
-                            console.log("-----------------------", oneProduct.fields.produits)
+                         )
                         })
-                        })
-                                                }
+                        }
                     </ul>
                 </section>
             </div>

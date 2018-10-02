@@ -93,7 +93,9 @@ class App extends Component {
           <Route path="/category-result" component={CategoryResult} />
           <Route
            path="/search-result" 
-          render={()=> <SearchResult inputValue={()=>this.state.inputValue} />}/>
+          render={()=> <SearchResult inputValue={this.state.inputValue} />}
+          />
+
           <Route path="/all-categories" component={AllCategories} />
 
           {/* link to caterogy page eg glass or plastic */}
