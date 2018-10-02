@@ -151,11 +151,14 @@ footer {
   height: 140px;
   font-size: 30px;
   margin-bottom: 60px;
-  text-align: center;
   border: black 1px solid;
   text-decoration: none;
   color: black;
   font-weight: bold;
+  z-index:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row > a:hover {
@@ -192,29 +195,65 @@ footer {
   .bois{
     background-image: url("./bois.jpg");
     background-size: cover;
+    background-position: center;
+    opacity: 0.5
+
   }
   .dechets-du-batiment{
     background-image: url("./bat.jpg");
     background-size: cover;
+    background-position: center;
+
   }
   .dechets-de-cuisine{
     background-image: url("./cuisine.jpg");
     background-size: cover;
+    background-position: center;
+
   }
   .dechets-dangereux{
     background-image: url("./toxic.jpg");
     background-size: cover;
+    background-position: center;
+
   }
   .dechets-electriques-et-electroniques{
     background-image: url("./elec.jpg");
     background-size: cover;
+    background-position: center;
+
   }
   .divers{
     background-image: url("./allcat.jpg");
     background-size: cover;
     background-position: center;
   }
-
+  .metaux{
+    background-image: url("./metal.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .mobilier{
+    background-image: url("./mobilier.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .papiers-cartons{
+    background-image: url("./papier.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .plastiques{
+    background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .textiles-et-cuir{
+    background-image: url("./clothes.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index:-1;
+  }
 
 /* --------------FUN FACTS ------------------ */
 
@@ -245,15 +284,22 @@ footer {
 .allCategories a {
   box-sizing: border-box;
   text-decoration: none;
-  color: black;
-  font-size: 20px;
+  color: white;
+  font-size: 40px;
   border: 3px;
   box-shadow: 0 0 10px rgb(202, 196, 196);
-  width: 40%;
+  width: 26.5%;
   margin-bottom: 40px;
   margin-left: 5%;
   height: 150px;
   float: left;
+  font-weight: bold;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .allCategories li {
