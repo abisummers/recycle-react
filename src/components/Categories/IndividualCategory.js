@@ -30,8 +30,10 @@ class IndividualCategory extends Component {
   }
 
   componentDidMount() {
+    const { id } = this.props.match.params;
+
     api
-      .get("/material/:id")
+      .get(`/material/${id}`)
       .then(response => {
         // console.log("all items", response.data);
         this.setState({ productCategory: response.data });
