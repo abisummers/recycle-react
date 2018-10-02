@@ -17,21 +17,21 @@ function HomePage(props) {
       </div>
 
       <div className="row">
-        <Link to="/material/plastiques">PLASTIC</Link>
+        <Link to="/material/plastiques" className="plastic">PLASTIQUES</Link>
 
-        <Link to="/material/dechets-electriques-et-electroniques">
-          ELECTRONICS
+        <Link to="/material/dechets-electriques-et-electroniques" className="electriques">
+          ELECTRIQUES & ELECTRONIQUES
         </Link>
 
-        <Link to="/material/dechets-de-cuisine">COMPOST</Link>
+        <Link to="/material/dechets-de-cuisine" className="compost">COMPOST</Link>
       </div>
 
       <div className="row">
-        <Link to="/material/verre">GLASS</Link>
+        <Link to="/material/verre" className="verre">VERRE</Link>
 
-        <Link to="/material/papiers-cartons">PAPER</Link>
+        <Link to="/material/papiers-cartons" className="papier">PAPIER</Link>
 
-        <Link to="/all-categories">SEE ALL </Link>
+        <Link to="/all-categories" className="toutes-categories">VOIR TOUTES LES CATEGORIES</Link>
       </div>
     </section>
   );

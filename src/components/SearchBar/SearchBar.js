@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
 
   render() {
     if (this.state.isSubmitSuccess === true) {
-      return <Redirect to={"/search-result"} />;
+      return <Redirect to={"/search-result"}/>
     }
     return (
       <form onSubmit={event => this.handleSubmit(event)}>
