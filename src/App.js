@@ -11,6 +11,7 @@ import AllCategories from "./components/Categories/AllCategories";
 import "./CSS/App.css";
 import "./index.css";
 import api from "./api";
+import FunFact from "./components/FunFact";
 
 import AddProduct from "./components/AddProduct";
 
@@ -20,7 +21,8 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      inputValue: ""
+      inputValue: "",
+      facts: ""
     };
   }
   // checks to see if there is a logged in user when the page is loaded
@@ -40,6 +42,10 @@ class App extends Component {
   handleEvent(searchInput) {
     this.setState({ inputValue: searchInput });
   }
+
+  // handleClick(randomclick) {
+  //   this.setState ({})
+  // }
 
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
@@ -95,6 +101,10 @@ class App extends Component {
                 handleEvent={event => this.handleEvent(event)}
               />
             )}
+          />
+          <Route
+            path="/facts"
+            render={() => <FunFact facts={this.state.facts} />}
           />
 
           <Route path="/category-result" component={CategoryResult} />
