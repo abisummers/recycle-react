@@ -5,7 +5,6 @@ import api from "../../api.js";
 class CategoryResult extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       _id: "",
       fields: {

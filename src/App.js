@@ -12,7 +12,7 @@ import "./CSS/App.css";
 import "./CSS/julie.css";
 import "./index.css";
 import api from "./api";
-
+import FunFact from "./components/FunFact";
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +20,8 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      inputValue: ""
+      inputValue: "",
+      facts: ""
     };
   }
   // checks to see if there is a logged in user when the page is loaded
@@ -38,9 +39,12 @@ class App extends Component {
   }
 
   handleEvent(searchInput) {
-    this.setState({ inputValue : searchInput });
-    
-}
+    this.setState({ inputValue: searchInput });
+  }
+
+  // handleClick(randomclick) {
+  //   this.setState ({})
+  // }
 
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
@@ -62,11 +66,12 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div>
-      <React.Fragment>
-      <style>
-      @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
-      </style>
-      </React.Fragment>
+        <React.Fragment>
+          <style>
+            @import
+            url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
+          </style>
+        </React.Fragment>
 
         <header>
           <NavLink exact to="/">
@@ -87,13 +92,22 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <HomePage currentUser={currentUser} handleEvent={(event)=>this.handleEvent(event)} />}
+            render={() => (
+              <HomePage
+                currentUser={currentUser}
+                handleEvent={event => this.handleEvent(event)}
+              />
+            )}
+          />
+          <Route
+            path="/facts"
+            render={() => <FunFact facts={this.state.facts} />}
           />
 
           <Route path="/category-result" component={CategoryResult} />
           <Route
-           path="/search-result" 
-          render={()=> <SearchResult inputValue={this.state.inputValue} />}
+            path="/search-result"
+            render={() => <SearchResult inputValue={this.state.inputValue} />}
           />
 
           <Route path="/all-categories" component={AllCategories} />

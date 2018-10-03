@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
+import FunFact from "./FunFact";
 
 function HomePage(props) {
   const { currentUser } = props;
   return (
     <section>
       <div className="funFact">
-        <p>A fun fact</p>
-        <button>again</button>
+        <FunFact handleEvent={(facts) => props.handleEvent(facts)}/>
       </div>
       {currentUser && <p>Hi, {currentUser.fullName}</p>}
 
