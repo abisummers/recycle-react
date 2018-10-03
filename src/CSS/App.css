@@ -24,7 +24,6 @@ h1 {
   text-align: center;
 }
 
-
 h2 {
   text-align: center;
   text-transform: uppercase;
@@ -93,18 +92,17 @@ footer {
   color: white;
 }
 /* -------------------SEARCH FORM -------------------- */
-input[type=text] {
+input[type="text"] {
   width: 130px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
+.form-search input[type="text"]:focus {
   width: 70%;
 }
 
- 
 .search-form {
   width: 80%;
   border-radius: 5px;
@@ -115,7 +113,6 @@ input[type=text]:focus {
 }
 
 .search-form input {
-
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -141,7 +138,7 @@ input[type=text]:focus {
 
 .search-form button:hover {
   border: 3px solid rgb(133, 189, 133);
-} 
+}
 /* ----------------HOME PAGE BUTTONS ----------------- */
 
 .row {
@@ -175,100 +172,97 @@ input[type=text]:focus {
   border: 3px solid rgb(133, 189, 133);
 }
 
-
-
 /* --------------CATEGORIES ------------------ */
-.toutes-categories{
+.toutes-categories {
   background-image: url("./allcat.jpg");
   background-size: cover;
   background-position: center;
 }
-.bois{
-    background-image: url("./bois.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-
-  }
-  .dechets-du-batiment{
-    background-image: url("./bat.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .dechets-de-cuisine{
-    background-image: url("./cuisine.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .dechets-dangereux{
-    background-image: url("./toxic.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .dechets-electriques-et-electroniques{
-    background-image: url("./elec.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .divers{
-    background-image: url("./allcat.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .metaux{
-    background-image: url("./metal.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .mobilier{
-    background-image: url("./mobilier.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .papiers-cartons{
-    background-image: url("./papier.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .plastiques{
-    background-image: url("./jonathan-chng-1057613-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .textiles-et-cuir{
-    background-image: url("./clothes.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9
-  }
-  .verre{
-    background-image: url("./verre.jpg");
-    background-size: cover;
-    opacity: 0.9
-  }
+.bois {
+  background-image: url("./bois.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.dechets-du-batiment {
+  background-image: url("./bat.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.dechets-de-cuisine {
+  background-image: url("./cuisine.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.dechets-dangereux {
+  background-image: url("./toxic.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.dechets-electriques-et-electroniques {
+  background-image: url("./elec.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.divers {
+  background-image: url("./allcat.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.metaux {
+  background-image: url("./metal.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.mobilier {
+  background-image: url("./mobilier.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.papiers-cartons {
+  background-image: url("./papier.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.plastiques {
+  background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.textiles-et-cuir {
+  background-image: url("./clothes.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+.verre {
+  background-image: url("./verre.jpg");
+  background-size: cover;
+  opacity: 0.9;
+}
 
 /* --------------FUN FACTS ------------------ */
 
 .funFact {
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   display: flex;
   width: 50%;
   margin: 40px auto;
   justify-content: flex-end;
-  font-size: 20px
+  font-size: 20px;
 }
 
-.funFact-button{
-  color:  rgb(133, 189, 133);
+.funFact-button {
+  color: rgb(133, 189, 133);
   height: 43px;
   width: 45px;
   margin: auto;
@@ -316,7 +310,7 @@ input[type=text]:focus {
 
 /*//////////////////////////////////////////////////////////////////
 [ SEARCH RESULT ]*/
-.product-container{
+.product-container {
   /* border: 2px solid blue; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -325,19 +319,18 @@ input[type=text]:focus {
   width: 80%;
   min-height: 300px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
-.product-image{
+.product-image {
   width: 175px;
-  margin-right:5px;
+  margin-right: 5px;
 }
-.product-info{
+.product-info {
   /* border: 2px solid green; */
   width: 750px;
-  margin-left: 35px; 
-  
+  margin-left: 35px;
 }
-.product-title{
+.product-title {
   margin: 0 auto;
 }
