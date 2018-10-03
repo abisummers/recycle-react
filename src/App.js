@@ -9,10 +9,11 @@ import Login from "./components/User/LogIn";
 import IndividualCategory from "./components/Categories/IndividualCategory";
 import AllCategories from "./components/Categories/AllCategories";
 import "./CSS/App.css";
-import "./CSS/julie.css";
 import "./index.css";
 import api from "./api";
 import FunFact from "./components/FunFact";
+
+import AddProduct from "./components/AddProduct";
 
 class App extends Component {
   constructor(props) {
@@ -66,12 +67,13 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div>
-        <React.Fragment>
-          <style>
-            @import
-            url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
-          </style>
-        </React.Fragment>
+      <React.Fragment>
+      <style>
+      @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two');
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
+      </style>
+      </React.Fragment>
 
         <header>
           <NavLink exact to="/">
@@ -133,6 +135,7 @@ class App extends Component {
             )}
           />
 
+          <Route path="/add" component={AddProduct} />
           <Route component={NotFound} />
         </Switch>
 

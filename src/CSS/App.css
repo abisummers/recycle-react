@@ -24,10 +24,6 @@ h1 {
   text-align: center;
 }
 
-label,
-form button {
-  display: block;
-}
 
 h2 {
   text-align: center;
@@ -97,24 +93,34 @@ footer {
   color: white;
 }
 /* -------------------SEARCH FORM -------------------- */
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
 
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 70%;
+}
+
+ 
 .search-form {
   width: 80%;
-  border: black solid 1px;
   border-radius: 5px;
   text-align: center;
   margin: auto;
   margin-bottom: 50px;
-  height: 200px;
+  height: 60px;
 }
 
 .search-form input {
-  box-sizing: border-box;
-  width: 50%;
-  border-radius: 1px;
-  height: 40px;
-  margin: 30px;
-  font-size: 20px;
+
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 30%;
+  background: #f1f1f1;
 }
 
 .search-form input:hover {
@@ -122,16 +128,20 @@ footer {
 }
 
 .search-form button {
-  box-sizing: border-box;
-  margin: auto;
-  padding: 20px 60px;
-  border-radius: 5px;
-  font-size: 20px;
+  background-color: rgb(133, 189, 133);
+  width: 5%;
+  padding: 8px;
+  /* background: #2196F3; */
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
 }
 
 .search-form button:hover {
   border: 3px solid rgb(133, 189, 133);
-}
+} 
 /* ----------------HOME PAGE BUTTONS ----------------- */
 
 .row {
@@ -151,84 +161,118 @@ footer {
   height: 140px;
   font-size: 30px;
   margin-bottom: 60px;
-  text-align: center;
   border: black 1px solid;
   text-decoration: none;
   color: black;
   font-weight: bold;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row > a:hover {
   border: 3px solid rgb(133, 189, 133);
 }
-.plastic {
-  background-image: url("./jonathan-chng-1057613-unsplash.jpg");
-  background-size: cover;
-  
-}
-.electriques{
-  background-image: url("./elec.jpg");
-  background-size: cover;
-}
-.compost{
-  background-image: url("./fruits.jpg");
-  background-size: cover;
-}
-.verre{
-  background-image: url("./verre.jpg");
-  background-size: cover;
-}
-.papier{
-  background-image: url("./papier.jpg");
-  background-size: cover;
-}
+
+
+
+/* --------------CATEGORIES ------------------ */
 .toutes-categories{
   background-image: url("./allcat.jpg");
   background-size: cover;
+  background-position: center;
 }
-
-
-/* --------------OTHER CATEGORIES ------------------ */
-  .bois{
+.bois{
     background-image: url("./bois.jpg");
     background-size: cover;
+    background-position: center;
+    opacity: 0.9
+
   }
   .dechets-du-batiment{
     background-image: url("./bat.jpg");
     background-size: cover;
+    background-position: center;
+    opacity: 0.9
   }
   .dechets-de-cuisine{
     background-image: url("./cuisine.jpg");
     background-size: cover;
+    background-position: center;
+    opacity: 0.9
   }
   .dechets-dangereux{
     background-image: url("./toxic.jpg");
     background-size: cover;
+    background-position: center;
+    opacity: 0.9
   }
   .dechets-electriques-et-electroniques{
     background-image: url("./elec.jpg");
     background-size: cover;
+    background-position: center;
+    opacity: 0.9
   }
   .divers{
     background-image: url("./allcat.jpg");
     background-size: cover;
     background-position: center;
+    opacity: 0.9
   }
-
+  .metaux{
+    background-image: url("./metal.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9
+  }
+  .mobilier{
+    background-image: url("./mobilier.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9
+  }
+  .papiers-cartons{
+    background-image: url("./papier.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9
+  }
+  .plastiques{
+    background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9
+  }
+  .textiles-et-cuir{
+    background-image: url("./clothes.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9
+  }
+  .verre{
+    background-image: url("./verre.jpg");
+    background-size: cover;
+    opacity: 0.9
+  }
 
 /* --------------FUN FACTS ------------------ */
 
 .funFact {
+  font-family: 'Lobster Two', cursive;
   display: flex;
   width: 50%;
   margin: 40px auto;
   justify-content: flex-end;
+  font-size: 20px
 }
 
-.funFact button {
-  box-sizing: border-box;
-  border-radius: 5px;
-  margin-left: 20px;
+.funFact-button{
+  color:  rgb(133, 189, 133);
+  height: 43px;
+  width: 45px;
+  margin: auto;
+  font-size: 22px;
 }
 
 .funFact button:hover {
@@ -245,15 +289,21 @@ footer {
 .allCategories a {
   box-sizing: border-box;
   text-decoration: none;
-  color: black;
-  font-size: 20px;
+  color: white;
+  font-size: 40px;
   border: 3px;
   box-shadow: 0 0 10px rgb(202, 196, 196);
-  width: 40%;
+  width: 26.5%;
   margin-bottom: 40px;
   margin-left: 5%;
   height: 150px;
   float: left;
+  font-weight: bold;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .allCategories li {
@@ -262,4 +312,32 @@ footer {
 
 .allCategories li > a:hover {
   border: 2px solid rgb(133, 189, 133);
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ SEARCH RESULT ]*/
+.product-container{
+  /* border: 2px solid blue; */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 10px auto 10px;
+  padding: 10px;
+  width: 80%;
+  min-height: 300px;
+  display: flex;
+  align-items: center; 
+}
+
+.product-image{
+  width: 175px;
+  margin-right:5px;
+}
+.product-info{
+  /* border: 2px solid green; */
+  width: 750px;
+  margin-left: 35px; 
+  
+}
+.product-title{
+  margin: 0 auto;
 }
