@@ -43,13 +43,13 @@ class FunFact extends React.Component {
         }
 
         return (
-            <section className="funfact-box">
+            <React.Fragment>
                 <h1> Saviez-vous que :</h1>
                 <ul>
                     {myFact}
-                    <button onClick={this.buttonClicked.bind(this)}> Random Fact </button>
                 </ul>
-            </section>
+                    <button onClick={this.buttonClicked.bind(this)} className="funFact-button"> <i className="fas fa-recycle"></i> </button>
+                </React.Fragment>
         )
     }
 }

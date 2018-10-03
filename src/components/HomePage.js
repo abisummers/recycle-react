@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
 import FunFact from "./FunFact";
 import { Component } from "react";
-import FunFacts from "../components/FunFacts";
 
 function HomePage(props) {
   const { currentUser } = props;
@@ -12,9 +11,7 @@ function HomePage(props) {
       <div className="funFact">
         <FunFact handleEvent={(facts) => props.handleEvent(facts)}/>
       </div>
-      {currentUser && <p>Hi, {currentUser.fullName}</p>}
-
-      <FunFacts />
+      {currentUser && <p className="hi-name">Hi, {currentUser.fullName}</p>}
 
       <div className="search-form">
         <SearchBar handleEvent={inputValue => props.handleEvent(inputValue)} />

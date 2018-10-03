@@ -71,22 +71,25 @@ class App extends Component {
       <style>
       @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two');
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossOrigin="anonymous"></link>
       </style>
       </React.Fragment>
 
         <header>
-          <p className="app-title">Recyclez-moi</p>
+        <NavLink exact to="/" className="app-title">
+        Recyclez-moi
+          </NavLink>
+      
           <NavLink exact to="/" className="nav-link">
-            Home
+            Accueil
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup" className="nav-link"> Sign up</NavLink>}
-          {!currentUser && <NavLink to="/login" className="nav-link">Login</NavLink>}
+          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
+          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
 
           {currentUser && (
             <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
-              Logout
+              Déconnection
             </NavLink>
           )}
         </header>
