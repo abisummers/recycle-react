@@ -17,18 +17,17 @@ function HomePage(props) {
       </div>
 
       <div className="row">
-        <Link to="/material/plastiques" className="plastic">
+        <Link to="/material/plastiques" className="plastiques">
           PLASTIQUES
         </Link>
 
         <Link
           to="/material/dechets-electriques-et-electroniques"
-          className="electriques"
-        >
+          className="dechets-electriques-et-electroniques">
           ELECTRIQUES & ELECTRONIQUES
         </Link>
 
-        <Link to="/material/dechets-de-cuisine" className="compost">
+        <Link to="/material/dechets-de-cuisine" className="dechets-de-cuisine">
           COMPOST
         </Link>
       </div>
@@ -38,7 +37,7 @@ function HomePage(props) {
           VERRE
         </Link>
 
-        <Link to="/material/papiers-cartons" className="papier">
+        <Link to="/material/papiers-cartons" className="papiers-cartons">
           PAPIER
         </Link>
 

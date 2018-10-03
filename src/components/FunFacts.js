@@ -8,8 +8,8 @@ class FunFacts extends Component {
   render() {
     return (
       <div className="funFact">
-        <p>A fun fact</p>
-        <button>again</button>
+        <p>Did tou know that we are going to teach you a lot of things with those fun facts</p>
+        <button className="funFact-button"><i class="fas fa-recycle"></i></button>
       </div>
     );
   }

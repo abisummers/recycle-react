@@ -9,7 +9,6 @@ import Login from "./components/User/LogIn";
 import IndividualCategory from "./components/Categories/IndividualCategory";
 import AllCategories from "./components/Categories/AllCategories";
 import "./CSS/App.css";
-import "./CSS/julie.css";
 import "./index.css";
 import api from "./api";
 
@@ -64,7 +63,9 @@ class App extends Component {
       <div>
       <React.Fragment>
       <style>
-      @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
+      @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two');
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
       </style>
       </React.Fragment>
 
