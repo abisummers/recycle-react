@@ -70,15 +70,16 @@ class App extends Component {
       </React.Fragment>
 
         <header>
-          <NavLink exact to="/">
+          <p className="app-title">Recyclez-moi</p>
+          <NavLink exact to="/" className="nav-link">
             Home
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup"> Sign up</NavLink>}
-          {!currentUser && <NavLink to="/login">Login</NavLink>}
+          {!currentUser && <NavLink to="/signup" className="nav-link"> Sign up</NavLink>}
+          {!currentUser && <NavLink to="/login" className="nav-link">Login</NavLink>}
 
           {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()}>
+            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
               Logout
             </NavLink>
           )}
