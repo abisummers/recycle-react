@@ -12,6 +12,7 @@ import "./CSS/App.css";
 import "./index.css";
 import api from "./api";
 
+import AddProduct from "./components/AddProduct";
 
 class App extends Component {
   constructor(props) {
@@ -37,9 +38,8 @@ class App extends Component {
   }
 
   handleEvent(searchInput) {
-    this.setState({ inputValue : searchInput });
-    
-}
+    this.setState({ inputValue: searchInput });
+  }
 
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
@@ -88,13 +88,18 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <HomePage currentUser={currentUser} handleEvent={(event)=>this.handleEvent(event)} />}
+            render={() => (
+              <HomePage
+                currentUser={currentUser}
+                handleEvent={event => this.handleEvent(event)}
+              />
+            )}
           />
 
           <Route path="/category-result" component={CategoryResult} />
           <Route
-           path="/search-result" 
-          render={()=> <SearchResult inputValue={this.state.inputValue} />}
+            path="/search-result"
+            render={() => <SearchResult inputValue={this.state.inputValue} />}
           />
 
           <Route path="/all-categories" component={AllCategories} />
@@ -120,6 +125,7 @@ class App extends Component {
             )}
           />
 
+          <Route path="/add" component={AddProduct} />
           <Route component={NotFound} />
         </Switch>
 
