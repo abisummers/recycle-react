@@ -1,5 +1,22 @@
 import React, { Component } from "react";
+import api from "../api";
 
+const productObj = {
+  Bois: "bois",
+  "Déchets du Bâtiment": "dechets-du-batiment",
+  "Déchets de cuisine": "dechets-de-cuisine",
+  "Déchets Dangereux": "dechets-dangereux",
+  "Déchets Electriques et électronique": "dechets-electriques-et-electronique",
+  Divers: "divers",
+  Métaux: "metaux",
+  Mobilier: "mobilier",
+  "Papiers-Cartons": "papiers-cartons",
+  Plastiques: "plastiques",
+  "Textiles et cuir": "textiles-et-cuir",
+  Verre: "verre"
+};
+
+console.log(productObj);
 class AddProduct extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +37,16 @@ class AddProduct extends Component {
 
   updateTypologie(event) {
     const { value } = event.target;
-    this.setState({ typologie: value });
+    const stateCopy = this.state.field;
+    stateCopy.typologie_des_dechets = value;
+    this.setState({ field: stateCopy });
   }
 
   updateFais(event) {
     const { value } = event.target;
-    this.setState({ fais: value });
+    const stateCopy = this.state.field;
+    stateCopy.qu_est_ce_que_j_en_fais = value;
+    this.setState({ field: stateCopy });
   }
 
   addProduit(event) {
@@ -37,24 +58,73 @@ class AddProduct extends Component {
 
   produitProduire(event) {
     const { value } = event.target;
-    this.setState({ comment_eviter_de_le_produire: value });
+    const stateCopy = this.state.field;
+    stateCopy.comment_eviter_de_le_produire = value;
+    this.setState({ field: stateCopy });
   }
 
   produitDevenir(event) {
     const { value } = event.target;
-    this.setState({ que_va_t_il_devenir: value });
+    const stateCopy = this.state.field;
+    stateCopy.que_va_t_il_devenir = value;
+    this.setState({ field: stateCopy });
+  }
+
+  // ------------------- IMAGE UPLOAD -----------------
+
+  imageUpload(event) {
+    const { files } = event.target;
+    console.log(files);
+    console.log("file selected", files[0]);
+
+    if (!files[0]) {
+      return;
+    }
+
+    const uploadData = new FormData();
+
+    //"imageFile" comes from the backend
+    uploadData.append("imageFile", files[0]);
+
+    api
+      .post("/upload-image", uploadData)
+
+      .then(res => {
+        console.log("file uploaded", res.data);
+        const { imageUrl } = res.data;
+        const stateCopy = this.state.field;
+        stateCopy.images = imageUrl;
+        this.setState({ field: stateCopy });
+      })
+      .catch(err => {
+        console.log(err);
+        alert("there was an error editing the phone");
+      });
   }
 
   // --------------------- FORM SUBMIT -------------
   handleSubmit(event) {
-    const { params } = this.props.match;
     event.preventDefault();
-    console.log(params);
+
+    const url = productObj[this.state.field.typologie_des_dechets];
+
+    api
+      .post("/add", { state: this.state, url: url })
+      .then(res => {
+        const { addedProduct } = this.props;
+        addedProduct(res.data.userDoc);
+      })
+      .catch(err => {
+        console.log(err);
+        alert("there was a mistake");
+      });
   }
 
   //--------------------- RENDER --------------------
 
   render() {
+    console.log("MY STATE", this.state);
+    console.log(productObj.value);
     const {
       produits,
       qu_est_ce_que_j_en_fais,
@@ -81,7 +151,10 @@ class AddProduct extends Component {
 
           <label>
             Qu'est ce que j'en fais
-            <select id="fais" onChange={event => this.updateFais(event)}>
+            <select
+              onChange={event => this.updateFais(event)}
+              value={qu_est_ce_que_j_en_fais}
+            >
               <option value="associations">associations</option>
               <option value="bois de chauffage">bois de chauffage</option>
               <option value="composteur">composteur</option>
@@ -123,63 +196,33 @@ class AddProduct extends Component {
           </label>
 
           <label>
-            images
-            <input
-              value={images}
-              type="file"
-              onChange={event => this.imageUpload(event)}
-              name=""
-            />
+            Image
+            <input type="file" onChange={event => this.imageUpload(event)} />
           </label>
+
+          <img src={images} />
 
           <label>
             typologie des dechets
             <select
-              id="typologie"
               onChange={event => this.updateTypologie(event)}
+              value={typologie_des_dechets}
             >
-              <option value="Bois" name="bois">
-                Bois
-              </option>
-              <option value="Déchets du Bâtiment" name="dehets-de-cuisine">
-                Déchets du Bâtiment
-              </option>
-              <option value="Déchets de cuisine" name="dechets-de-cusine">
-                Déchets de cuisine
-              </option>
-              <option value="Déchets Dangereux" name="dechets-dangereux">
-                Déchets Dangereux
-              </option>
-              <option
-                value="Déchets Electriques et électroniques"
-                name="dechets-electriques-et-electroniques"
-              >
+              <option value="Bois">Bois</option>
+              <option value="Déchets du Bâtiment">Déchets du Bâtiment</option>
+              <option value="Déchets de cuisine">Déchets de cuisine</option>
+              <option value="Déchets Dangereux">Déchets Dangereux</option>
+              <option value="Déchets Electriques et électroniques">
                 Déchets Electriques et électroniques
               </option>
-              <option value="Divers" name="divers">
-                Divers
-              </option>
-              <option value="Métaux" name="metaux">
-                Métaux
-              </option>
-              <option value="Mobilier" name="mobilier">
-                Mobilier
-              </option>
-              <option value="Papiers-Cartons" name="papiers-cartons">
-                Papiers-Cartons
-              </option>
-              <option value="Plastiques" name="plastiques">
-                Plastiques
-              </option>
-              <option value="Textiles et cuir" name="textiles-et-cuir">
-                Textiles et cuir
-              </option>
-              <option value="Verre" name="verre">
-                Verre
-              </option>
-              <option value="Déchets de jardin" name="dechets-de-jardin">
-                Déchets de jardin
-              </option>
+              <option value="key">Divers</option>
+              <option value="Métaux">Métaux</option>
+              <option value="Mobilier">Mobilier</option>
+              <option value="Papiers-Cartons">Papiers-Cartons</option>
+              <option value="Plastiques">Plastiques</option>
+              <option value="Textiles et cuir">Textiles et cuir</option>
+              <option value="Verre">Verre</option>
+              <option value="Déchets de jardin">Déchets de jardin</option>
             </select>
           </label>
 
