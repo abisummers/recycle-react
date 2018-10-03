@@ -12,6 +12,7 @@ import "./CSS/App.css";
 import "./CSS/julie.css";
 import "./index.css";
 import api from "./api";
+
 import AddProduct from "./components/AddProduct";
 
 class App extends Component {

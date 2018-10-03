@@ -30,7 +30,9 @@ class AddProduct extends Component {
 
   addProduit(event) {
     const { value } = event.target;
-    this.setState({ produits: value });
+    const stateCopy = this.state.field;
+    stateCopy.produits = value;
+    this.setState({ field: stateCopy });
   }
 
   produitProduire(event) {
@@ -60,7 +62,7 @@ class AddProduct extends Component {
       que_va_t_il_devenir,
       images,
       typologie_des_dechets
-    } = this.state;
+    } = this.state.field;
 
     return (
       <section>
@@ -122,7 +124,12 @@ class AddProduct extends Component {
 
           <label>
             images
-            <input value={images} type="file" onChange="" name="" />
+            <input
+              value={images}
+              type="file"
+              onChange={event => this.imageUpload(event)}
+              name=""
+            />
           </label>
 
           <label>

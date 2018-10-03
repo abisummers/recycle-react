@@ -155,7 +155,7 @@ footer {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  z-index:1;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,93 +167,86 @@ footer {
 .plastic {
   background-image: url("./jonathan-chng-1057613-unsplash.jpg");
   background-size: cover;
-  
 }
-.electriques{
+.electriques {
   background-image: url("./elec.jpg");
   background-size: cover;
 }
-.compost{
+.compost {
   background-image: url("./fruits.jpg");
   background-size: cover;
 }
-.verre{
+.verre {
   background-image: url("./verre.jpg");
   background-size: cover;
 }
-.papier{
+.papier {
   background-image: url("./papier.jpg");
   background-size: cover;
 }
-.toutes-categories{
+.toutes-categories {
   background-image: url("./allcat.jpg");
   background-size: cover;
 }
 
-
 /* --------------OTHER CATEGORIES ------------------ */
-  .bois{
-    background-image: url("./bois.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5
-
-  }
-  .dechets-du-batiment{
-    background-image: url("./bat.jpg");
-    background-size: cover;
-    background-position: center;
-
-  }
-  .dechets-de-cuisine{
-    background-image: url("./cuisine.jpg");
-    background-size: cover;
-    background-position: center;
-
-  }
-  .dechets-dangereux{
-    background-image: url("./toxic.jpg");
-    background-size: cover;
-    background-position: center;
-
-  }
-  .dechets-electriques-et-electroniques{
-    background-image: url("./elec.jpg");
-    background-size: cover;
-    background-position: center;
-
-  }
-  .divers{
-    background-image: url("./allcat.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  .metaux{
-    background-image: url("./metal.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  .mobilier{
-    background-image: url("./mobilier.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  .papiers-cartons{
-    background-image: url("./papier.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  .plastiques{
-    background-image: url("./jonathan-chng-1057613-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  .textiles-et-cuir{
-    background-image: url("./clothes.jpg");
-    background-size: cover;
-    background-position: center;
-    z-index:-1;
-  }
+.bois {
+  background-image: url("./bois.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+.dechets-du-batiment {
+  background-image: url("./bat.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.dechets-de-cuisine {
+  background-image: url("./cuisine.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.dechets-dangereux {
+  background-image: url("./toxic.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.dechets-electriques-et-electroniques {
+  background-image: url("./elec.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.divers {
+  background-image: url("./allcat.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.metaux {
+  background-image: url("./metal.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.mobilier {
+  background-image: url("./mobilier.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.papiers-cartons {
+  background-image: url("./papier.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.plastiques {
+  background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.textiles-et-cuir {
+  background-image: url("./clothes.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
 
 /* --------------FUN FACTS ------------------ */
 
@@ -299,7 +292,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .allCategories li {
