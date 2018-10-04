@@ -120,6 +120,12 @@ form > input {
   text-align: left;
 }
 
+.about {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
 /* --------------FUN FACTS ------------------ */
 
 .funFact {
@@ -163,7 +169,7 @@ li {
   width: 70%;
 }
 
-.search-form {
+.search-form .form-search {
   width: 80%;
   border-radius: 5px;
   text-align: center;
@@ -172,7 +178,7 @@ li {
   height: 60px;
 }
 
-.search-form input {
+.search-form > .form-search input {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -409,8 +415,8 @@ li {
   border: 2px solid rgb(133, 189, 133);
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ SEARCH RESULT ]*/
+/* ------------------- SEARCH RESULT ---------------- */
+
 .product-container {
   /* border: 2px solid blue; */
   -webkit-box-sizing: border-box;

@@ -46,7 +46,14 @@ class SignUp extends Component {
     const { fullName, email, originalPassword } = this.state;
 
     return (
-      <section>
+      <section className="loginPage">
+        <div className="about">
+          <h3>About Us</h3>
+          <p>
+            By joining our site, you're able to add products to help others
+            recycle.
+          </p>
+        </div>
         <div className="log-sign-form">
           <h2>Sign Up</h2>
           <form onSubmit={event => this.submitSignupForm(event)}>
