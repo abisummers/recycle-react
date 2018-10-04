@@ -42,9 +42,9 @@ class Login extends Component {
     }
 
     return (
-      <section className= "login-container">
-        <h2>Login</h2>
+      <section className="login-container">
         <div className="log-sign-form">
+          <h2>Login</h2>
           <form onSubmit={event => this.handleSubmit(event)}>
             <label>
               Email:

@@ -47,8 +47,8 @@ class SignUp extends Component {
 
     return (
       <section>
-        <h2>Sign Up</h2>
         <div className="log-sign-form">
+          <h2>Sign Up</h2>
           <form onSubmit={event => this.submitSignupForm(event)}>
             <label>
               Full Name:
