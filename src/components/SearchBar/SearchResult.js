@@ -45,6 +45,7 @@ class SearchResult extends React.Component {
                       <img
                         src={oneProduct.fields.images}
                         className="product-image"
+                        alt=""
                       />
                       <div className="product-info">
                         <h3 className="product-title">
@@ -82,7 +83,3 @@ class SearchResult extends React.Component {
 }
 
 export default SearchResult;
-
-{
-  /* <SearchBar handleEvent={event => this.handleEvent(event)} inputValue={this.state.inputValue} /> */
-}

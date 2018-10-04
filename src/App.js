@@ -43,10 +43,6 @@ class App extends Component {
     this.setState({ inputValue: searchInput });
   }
 
-  // handleClick(randomclick) {
-  //   this.setState ({})
-  // }
-
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
   }
@@ -85,20 +81,38 @@ class App extends Component {
         </React.Fragment>
 
         <header>
-        <NavLink exact to="/" className="app-title">
-        Recyclez-moi
+          <NavLink exact to="/" className="app-title">
+            Recyclez-moi
           </NavLink>
-      
+
           <NavLink exact to="/" className="nav-link">
             Accueil
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
-          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
+          {!currentUser && (
+            <NavLink to="/signup" className="nav-link">
+              Inscription
+            </NavLink>
+          )}
+          {!currentUser && (
+            <NavLink to="/login" className="nav-link">
+              Connection
+            </NavLink>
+          )}
 
           {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
+            <NavLink
+              to="/"
+              onClick={() => this.logOutClick()}
+              className="nav-link"
+            >
               Déconnection
+            </NavLink>
+          )}
+
+          {currentUser && (
+            <NavLink to="/add" className="nav-link">
+              Add
             </NavLink>
           )}
         </header>
@@ -151,7 +165,10 @@ class App extends Component {
           <Route
             path="/add"
             render={() => (
-              <AddProduct addedProduct={userDoc => this.updateUser(userDoc)} />
+              <AddProduct
+                currentUser={currentUser}
+                addedProduct={userDoc => this.updateUser(userDoc)}
+              />
             )}
           />
 

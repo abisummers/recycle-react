@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NotFound from "../NotFound";
 import api from "../../api.js";
 
 const categories = [
@@ -34,7 +33,7 @@ class IndividualCategory extends Component {
 
     api
       .get(`/material/${id}`)
-      .then(response => { 
+      .then(response => {
         // console.log("all items", response.data);
         this.setState({ productCategory: response.data });
       })

@@ -24,30 +24,28 @@ class SearchBar extends React.Component {
 
   render() {
     if (this.state.isSubmitSuccess === true) {
-      return <Redirect to={"/search-result"}/>
+      return <Redirect to={"/search-result"} />;
     }
     return (
-      <form onSubmit={event => this.handleSubmit(event)} className="form-search">
-        
-          <input
-            className="input-search"
-            type="text"
-            name="search"
-            placeholder="Que voulez-vous recycler ?"
-            value={this.state.inputValue}
-            onChange={event => this.handleChange(event)}
-          />
-        
-        <button className="search-button"><i className="fa fa-search"></i></button>
+      <form
+        onSubmit={event => this.handleSubmit(event)}
+        className="form-search"
+      >
+        <input
+          className="input-search"
+          type="text"
+          name="search"
+          placeholder="Que voulez-vous recycler ?"
+          value={this.state.inputValue}
+          onChange={event => this.handleChange(event)}
+        />
+
+        <button className="search-button">
+          <i className="fa fa-search" />
+        </button>
       </form>
     );
   }
-
 }
 
 export default SearchBar;
-
-{/* <form className="example" action="action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i className="fa fa-search"></i></button>
-</form> */}
