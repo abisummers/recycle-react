@@ -221,42 +221,42 @@ li{
   background-image: url("./images/allcat.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .metaux {
   background-image: url("./images/metal.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .mobilier {
   background-image: url("./images/mobilier.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .papiers-cartons {
   background-image: url("./images/papier.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .plastiques {
   background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .textiles-et-cuir {
   background-image: url("./images/clothes.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .verre {
   background-image: url("./images/verre.jpg");
   background-size: cover;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .bois{
     background-image: url("./images/bois.jpg");
@@ -339,6 +339,7 @@ li{
 }
 
 .allCategories a {
+  font-family: 'Oswald', sans-serif;
   box-sizing: border-box;
   text-decoration: none;
   color: white;
@@ -351,8 +352,8 @@ li{
   height: 150px;
   float: left;
   font-weight: bold;
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: black;
+  /* -webkit-text-stroke: 2px; */
+  /* -webkit-text-stroke-color: black; */
   display: flex;
   justify-content: center;
   align-items: center;
