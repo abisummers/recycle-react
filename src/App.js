@@ -12,13 +12,14 @@ import "./CSS/App.css";
 import "./index.css";
 import api from "./api";
 import FunFact from "./components/FunFact";
-
 import AddProduct from "./components/AddProduct";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    const { currentUser } = props;
     this.state = {
       currentUser: null,
       isLoginChecked: false,
@@ -114,6 +115,10 @@ class App extends Component {
             </NavLink>
           )}
         </header>
+
+        <section className="search-form">
+          <SearchBar handleEvent={event => this.handleEvent(event)} />
+        </section>
 
         <Switch>
           <Route
