@@ -12,10 +12,6 @@ function HomePage(props) {
       </div>
       {currentUser && <p className="hi-name">Hi, {currentUser.fullName}</p>}
 
-      <div className="search-form">
-        <SearchBar handleEvent={inputValue => props.handleEvent(inputValue)} />
-      </div>
-
       <div className="row">
         <Link to="/material/plastiques" className="plastiques">
           PLASTIQUES
