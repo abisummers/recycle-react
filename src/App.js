@@ -43,10 +43,6 @@ class App extends Component {
     this.setState({ inputValue: searchInput });
   }
 
-  // handleClick(randomclick) {
-  //   this.setState ({})
-  // }
-
   updateUser(userDoc) {
     this.setState({ currentUser: userDoc });
   }

@@ -7,8 +7,24 @@ class Login extends Component {
     super(props);
     this.state = {
       email: "",
-      originalPassword: ""
+      originalPassword: "",
+      showModal: false,
+      loading: false,
+      error: null
     };
+  }
+
+  openModal() {
+    this.setState({
+      showModal: true,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false,
+      error: null
+    });
   }
 
   handleSubmit(event) {
@@ -42,11 +58,13 @@ class Login extends Component {
     }
 
     return (
-      <section className= "login-container">
+      <section className="login-container">
         <h2>Login</h2>
         <div className="log-sign-form">
           <form onSubmit={event => this.handleSubmit(event)}>
             <label>
+              visible={this.state.showModal}
+              onCloseModal={this.closeModal.bind(this)}
               Email:
               <input
                 type="email"
