@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CategoryResult from "./components/Categories/CategoryResult";
 import SearchResult from "./components/SearchBar/SearchResult";
@@ -21,6 +21,7 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
+      isLoginChecked: false,
       inputValue: "",
       facts: ""
     };
@@ -44,7 +45,10 @@ class App extends Component {
   }
 
   updateUser(userDoc) {
-    this.setState({ currentUser: userDoc });
+    this.setState({
+      currentUser: userDoc,
+      isLoginChecked: true
+    });
   }
 
   logOutClick() {
@@ -60,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser, isLoginChecked } = this.state;
     return (
       <div>
         <React.Fragment>
@@ -107,12 +111,6 @@ class App extends Component {
               className="nav-link"
             >
               Déconnection
-            </NavLink>
-          )}
-
-          {currentUser && (
-            <NavLink to="/add" className="nav-link">
-              Add
             </NavLink>
           )}
         </header>
@@ -164,12 +162,18 @@ class App extends Component {
 
           <Route
             path="/add"
-            render={() => (
-              <AddProduct
-                currentUser={currentUser}
-                addedProduct={userDoc => this.updateUser(userDoc)}
-              />
-            )}
+            render={() =>
+              !isLoginChecked ? (
+                <p>Loading...</p>
+              ) : !currentUser ? (
+                <Redirect to="/login" />
+              ) : (
+                <AddProduct
+                  currentUser={currentUser}
+                  addedProduct={userDoc => this.updateUser(userDoc)}
+                />
+              )
+            }
           />
 
           <Route component={NotFound} />
