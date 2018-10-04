@@ -8,17 +8,35 @@ header {
   background-color: rgb(133, 189, 133);
   height: 50px;
   display: flex;
+  margin-bottom: 60px;
 }
 
 .nav-link {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin-right: 30px;
-  text-decoration: none;
   text-transform: uppercase;
-  color: white;
   text-align: left;
+  width: 100%;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.nav-link a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.app-title {
+  width: 30%;
+}
+
+.app-title a {
+  font-family: "Lobster Two", cursive;
+  font-size: 39px;
+  margin: 0px 19px;
+  color: white;
 }
 
 h1 {
@@ -30,11 +48,9 @@ h2 {
   text-transform: uppercase;
 }
 
-.app-title{
-  font-family:'Lobster Two', cursive;
-  font-size: 39px;
-  margin: 0px 19px;
-  color:white;
+.currentUser {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* ---------------CLEAR FIX ------------ */
@@ -63,21 +79,29 @@ footer {
 /* -----------------LOGIN/SIGNUP FORMS -------------- */
 
 .log-sign-form {
-  width: 50%;
+  width: 30%;
   display: block;
   text-align: center;
   margin: auto;
-  border: 1px black solid;
+  border: 1px rgb(185, 184, 184) solid;
   border-radius: 5px;
   margin-bottom: 60px;
 }
 
+.log-sign-form a {
+  text-decoration: none;
+  color: rgb(133, 189, 133);
+  display: block;
+  text-align: center;
+  margin-left: 135px;
+  margin-bottom: 20px;
+}
+
 .log-sign-form input {
   width: 50%;
-  margin: auto;
-  display: block;
   padding: 5px 0;
   border-radius: 1px;
+  margin-left: 10px;
 }
 
 .log-sign-form label {
@@ -88,7 +112,7 @@ footer {
 
 .log-sign-form form > button {
   text-align: center;
-  margin: auto;
+  margin-right: 18%;
   margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 5px;
@@ -100,11 +124,25 @@ footer {
   color: white;
 }
 
+form {
+  width: 70%;
+  text-align: right;
+  margin-left: 10px;
+}
+
+form > input {
+  text-align: left;
+}
+
+.about {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
 /* --------------FUN FACTS ------------------ */
 
-
-.funFact{
-  font-family: 'Lobster Two', cursive;
+.funFact {
   display: -ms-flexbox;
   /* display: flex; */
   width: 50%;
@@ -116,12 +154,12 @@ footer {
   text-align: center;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-.funFact-button{
-  color:  rgb(133, 189, 133);
+.funFact-button {
+  color: rgb(133, 189, 133);
   height: 43px;
   width: 45px;
   margin: auto;
@@ -132,20 +170,19 @@ li{
   border: 3px solid rgb(133, 189, 133);
 }
 
-
 /* -------------------SEARCH FORM -------------------- */
-.input-search[type=text] {
+.input-search[type="text"] {
   width: 206px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
-.input-search[type=text]:focus {
+.input-search[type="text"]:focus {
   width: 70%;
 }
 
-.search-form {
+.search-form .form-search {
   width: 80%;
   border-radius: 5px;
   text-align: center;
@@ -154,7 +191,7 @@ li{
   height: 60px;
 }
 
-.search-form input {
+.search-form > .form-search input {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -208,8 +245,7 @@ li{
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: black;
+  font-family: "Oswald", sans-serif;
 }
 
 .row > a:hover {
@@ -217,7 +253,7 @@ li{
 }
 
 /* --------------CATEGORIES ------------------ */
-.toutes-categories{
+.toutes-categories {
   background-image: url("./images/allcat.jpg");
   background-size: cover;
   background-position: center;
@@ -258,79 +294,112 @@ li{
   background-size: cover;
   /* opacity: 0.9; */
 }
-.bois{
-    background-image: url("./images/bois.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
+.bois {
+  background-image: url("./images/bois.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-du-batiment {
+  background-image: url("./images/bat.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-de-cuisine {
+  background-image: url("./images/cuisine.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-dangereux {
+  background-image: url("./images/toxic.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-electriques-et-electroniques {
+  background-image: url("./images/elec.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.divers {
+  background-image: url("./images/allcat.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.metaux {
+  background-image: url("./images/metal.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.mobilier {
+  background-image: url("./images/mobilier.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.papiers-cartons {
+  background-image: url("./images/papier.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.plastiques {
+  background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.textiles-et-cuir {
+  background-image: url("./images/clothes.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.verre {
+  background-image: url("./images/verre.jpg");
+  background-size: cover;
+  /* opacity: 0.9 */
+}
 
-  }
-  .dechets-du-batiment{
-    background-image: url("./images/bat.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .dechets-de-cuisine{
-    background-image: url("./images/cuisine.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .dechets-dangereux{
-    background-image: url("./images/toxic.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .dechets-electriques-et-electroniques{
-    background-image: url("./images/elec.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .divers{
-    background-image: url("./images/allcat.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .metaux{
-    background-image: url("./images/metal.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .mobilier{
-    background-image: url("./images/mobilier.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .papiers-cartons{
-    background-image: url("./images/papier.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .plastiques{
-    background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .textiles-et-cuir{
-    background-image: url("./images/clothes.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .verre{
-    background-image: url("./images/verre.jpg");
-    background-size: cover;
-    /* opacity: 0.9 */
-  }
+/* ----------------ONE CATEGORY LIST -------------- */
+.popup {
+  border: 2px green solid;
+  position: absolute;
+  /* margin-right: -10%; */
+  margin-left: 50%;
+}
+.oneCategory-name {
+  font-size: 40px;
+}
 
+.product-list {
+  font-size: 20px;
+  display: flex;
+}
+
+.popup-button {
+  background: none;
+  border: none;
+  display: flex;
+}
+.popup_inner {
+  border: 2px blue solid;
+  background-color: grey;
+  width: 450px;
+}
+.close-popup {
+  margin: 0 40%;
+}
+
+.image-product {
+  width: 90px;
+  height: 90px;
+}
 /* ----------------ALL CATEGORIES -------------- */
 
 .allCategories {
@@ -339,7 +408,7 @@ li{
 }
 
 .allCategories a {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   box-sizing: border-box;
   text-decoration: none;
   color: white;
@@ -367,8 +436,8 @@ li{
   border: 2px solid rgb(133, 189, 133);
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ SEARCH RESULT ]*/
+/* ------------------- SEARCH RESULT ---------------- */
+
 .product-container {
   /* border: 2px solid blue; */
   -webkit-box-sizing: border-box;

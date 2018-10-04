@@ -74,7 +74,6 @@ class AddProduct extends Component {
 
   imageUpload(event) {
     const { files } = event.target;
-    console.log(files);
     console.log("file selected", files[0]);
 
     if (!files[0]) {
@@ -123,8 +122,8 @@ class AddProduct extends Component {
   //--------------------- RENDER --------------------
 
   render() {
-    console.log("MY STATE", this.state);
-    console.log(productObj.value);
+    // console.log("MY STATE", this.state);
+    // console.log(productOb  j.value);
     const {
       produits,
       qu_est_ce_que_j_en_fais,
@@ -133,6 +132,13 @@ class AddProduct extends Component {
       images,
       typologie_des_dechets
     } = this.state.field;
+
+    const { currentUser } = this.props;
+    console.log(currentUser);
+
+    // if (userDoc === null) {
+    //   <Redirect to="/" />;
+    // }
 
     return (
       <section>
@@ -200,7 +206,11 @@ class AddProduct extends Component {
             <input type="file" onChange={event => this.imageUpload(event)} />
           </label>
 
+<<<<<<< HEAD
           <img src={images} alt=""/>
+=======
+          <img src={images} alt="new product" />
+>>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
 
           <label>
             typologie des dechets

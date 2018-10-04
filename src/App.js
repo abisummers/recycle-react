@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CategoryResult from "./components/Categories/CategoryResult";
 import SearchResult from "./components/SearchBar/SearchResult";
@@ -13,15 +13,21 @@ import "./index.css";
 import api from "./api";
 import FunFact from "./components/FunFact";
 import AddProduct from "./components/AddProduct";
+<<<<<<< HEAD
 import Grandquizz from "./components/Quizz/Grandquizz";
 
+=======
+import SearchBar from "./components/SearchBar/SearchBar";
+>>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    const { currentUser } = props;
     this.state = {
       currentUser: null,
+      isLoginChecked: false,
       inputValue: "",
       facts: ""
     };
@@ -45,7 +51,10 @@ class App extends Component {
   }
 
   updateUser(userDoc) {
-    this.setState({ currentUser: userDoc });
+    this.setState({
+      currentUser: userDoc,
+      isLoginChecked: true
+    });
   }
 
   logOutClick() {
@@ -61,7 +70,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser, isLoginChecked } = this.state;
     return (
       <div>
         <React.Fragment>
@@ -82,6 +91,7 @@ class App extends Component {
         </React.Fragment>
 
         <header>
+<<<<<<< HEAD
           <NavLink exact to="/" className="app-title">
             Recyclez-moi
           </NavLink>
@@ -100,7 +110,29 @@ class App extends Component {
           )}
 
 
+=======
+          <div className="app-title">
+            <NavLink exact to="/">
+              Recyclez-moi
+            </NavLink>
+          </div>
+
+          <div className="nav-link">
+            {!currentUser && <NavLink to="/signup">Inscription</NavLink>}
+            {!currentUser && <NavLink to="/login">Connection</NavLink>}
+
+            {currentUser && (
+              <NavLink to="/" onClick={() => this.logOutClick()}>
+                Déconnection
+              </NavLink>
+            )}
+          </div>
+>>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
         </header>
+
+        <section className="search-form">
+          <SearchBar handleEvent={event => this.handleEvent(event)} />
+        </section>
 
         <Switch>
           <Route
@@ -154,9 +186,18 @@ class App extends Component {
 
           <Route
             path="/add"
-            render={() => (
-              <AddProduct addedProduct={userDoc => this.updateUser(userDoc)} />
-            )}
+            render={() =>
+              !isLoginChecked ? (
+                <p>Loading...</p>
+              ) : !currentUser ? (
+                <Redirect to="/login" />
+              ) : (
+                <AddProduct
+                  currentUser={currentUser}
+                  addedProduct={userDoc => this.updateUser(userDoc)}
+                />
+              )
+            }
           />
 
           <Route component={NotFound} />

@@ -40,7 +40,7 @@ class CategoryResult extends React.Component {
   
     return (
       <section>
-        <img src={images} alt="" />
+        <img src={images} alt="product" />
         <h2>How to recycle {produits}? </h2>
         <h3>Where to throw it?</h3>
         <p>{qu_est_ce_que_j_en_fais}</p>

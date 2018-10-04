@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../../api";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -59,8 +59,12 @@ class Login extends Component {
 
     return (
       <section className="login-container">
+<<<<<<< HEAD
         <h2>Login</h2>
+=======
+>>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
         <div className="log-sign-form">
+          <h2>Login</h2>
           <form onSubmit={event => this.handleSubmit(event)}>
             <label>
               visible=
@@ -89,6 +93,7 @@ class Login extends Component {
             </label>
 
             <button>Login</button>
+            <Link to="signup">Or sign up</Link>
           </form>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import api from "../../api";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
   constructor(props) {
@@ -46,9 +47,16 @@ class SignUp extends Component {
     const { fullName, email, originalPassword } = this.state;
 
     return (
-      <section>
-        <h2>Sign Up</h2>
+      <section className="loginPage">
+        <div className="about">
+          <h3>About Us</h3>
+          <p>
+            By joining our site, you're able to add products to help others
+            recycle.
+          </p>
+        </div>
         <div className="log-sign-form">
+          <h2>Sign Up</h2>
           <form onSubmit={event => this.submitSignupForm(event)}>
             <label>
               Full Name:
@@ -83,6 +91,7 @@ class SignUp extends Component {
               />
             </label>
             <button>Sign Up</button>
+            <Link to="/login">Or login</Link>
           </form>
         </div>
       </section>
