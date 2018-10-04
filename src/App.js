@@ -86,34 +86,22 @@ class App extends Component {
         </React.Fragment>
 
         <header>
-          <NavLink exact to="/" className="app-title">
-            Recyclez-moi
-          </NavLink>
-
-          <NavLink exact to="/" className="nav-link">
-            Accueil
-          </NavLink>
-
-          {!currentUser && (
-            <NavLink to="/signup" className="nav-link">
-              Inscription
+          <div className="app-title">
+            <NavLink exact to="/">
+              Recyclez-moi
             </NavLink>
-          )}
-          {!currentUser && (
-            <NavLink to="/login" className="nav-link">
-              Connection
-            </NavLink>
-          )}
+          </div>
 
-          {currentUser && (
-            <NavLink
-              to="/"
-              onClick={() => this.logOutClick()}
-              className="nav-link"
-            >
-              Déconnection
-            </NavLink>
-          )}
+          <div className="nav-link">
+            {!currentUser && <NavLink to="/signup">Inscription</NavLink>}
+            {!currentUser && <NavLink to="/login">Connection</NavLink>}
+
+            {currentUser && (
+              <NavLink to="/" onClick={() => this.logOutClick()}>
+                Déconnection
+              </NavLink>
+            )}
+          </div>
         </header>
 
         <section className="search-form">
