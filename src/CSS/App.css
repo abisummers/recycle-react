@@ -134,23 +134,14 @@ li{
 
 
 /* -------------------SEARCH FORM -------------------- */
-<<<<<<< HEAD
 .input-search[type=text] {
   width: 206px;
-=======
-input[type="text"] {
-  width: 130px;
->>>>>>> 0088777019133ba2995334182c2daceb18202dba
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
-<<<<<<< HEAD
 .input-search[type=text]:focus {
-=======
-.form-search input[type="text"]:focus {
->>>>>>> 0088777019133ba2995334182c2daceb18202dba
   width: 70%;
 }
 
@@ -226,88 +217,47 @@ input[type="text"] {
 }
 
 /* --------------CATEGORIES ------------------ */
-<<<<<<< HEAD
 .toutes-categories{
   background-image: url("./images/allcat.jpg");
-=======
-.toutes-categories {
-  background-image: url("./allcat.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.bois {
-  background-image: url("./bois.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
-}
-.dechets-du-batiment {
-  background-image: url("./bat.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
-}
-.dechets-de-cuisine {
-  background-image: url("./cuisine.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
-}
-.dechets-dangereux {
-  background-image: url("./toxic.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
-}
-.dechets-electriques-et-electroniques {
-  background-image: url("./elec.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
-}
-.divers {
-  background-image: url("./allcat.jpg");
->>>>>>> 0088777019133ba2995334182c2daceb18202dba
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 .metaux {
-  background-image: url("./metal.jpg");
+  background-image: url("./images/metal.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 .mobilier {
-  background-image: url("./mobilier.jpg");
+  background-image: url("./images/mobilier.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 .papiers-cartons {
-  background-image: url("./papier.jpg");
+  background-image: url("./images/papier.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 .plastiques {
-  background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+  background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 .textiles-et-cuir {
-  background-image: url("./clothes.jpg");
+  background-image: url("./images/clothes.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 .verre {
-  background-image: url("./verre.jpg");
+  background-image: url("./images/verre.jpg");
   background-size: cover;
   opacity: 0.9;
 }
-<<<<<<< HEAD
 .bois{
     background-image: url("./images/bois.jpg");
     background-size: cover;
@@ -381,32 +331,6 @@ input[type="text"] {
     /* opacity: 0.9 */
   }
 
-=======
-
-/* --------------FUN FACTS ------------------ */
-
-.funFact {
-  font-family: "Lobster Two", cursive;
-  display: flex;
-  width: 50%;
-  margin: 40px auto;
-  justify-content: flex-end;
-  font-size: 20px;
-}
-
-.funFact-button {
-  color: rgb(133, 189, 133);
-  height: 43px;
-  width: 45px;
-  margin: auto;
-  font-size: 22px;
-}
-
-.funFact button:hover {
-  border: 3px solid rgb(133, 189, 133);
-}
-
->>>>>>> 0088777019133ba2995334182c2daceb18202dba
 /* ----------------ALL CATEGORIES -------------- */
 
 .allCategories {
