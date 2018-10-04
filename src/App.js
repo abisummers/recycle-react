@@ -13,12 +13,8 @@ import "./index.css";
 import api from "./api";
 import FunFact from "./components/FunFact";
 import AddProduct from "./components/AddProduct";
-<<<<<<< HEAD
 import Grandquizz from "./components/Quizz/Grandquizz";
-
-=======
 import SearchBar from "./components/SearchBar/SearchBar";
->>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
 
 class App extends Component {
   constructor(props) {
@@ -91,7 +87,6 @@ class App extends Component {
         </React.Fragment>
 
         <header>
-<<<<<<< HEAD
           <NavLink exact to="/" className="app-title">
             Recyclez-moi
           </NavLink>
@@ -110,24 +105,6 @@ class App extends Component {
           )}
 
 
-=======
-          <div className="app-title">
-            <NavLink exact to="/">
-              Recyclez-moi
-            </NavLink>
-          </div>
-
-          <div className="nav-link">
-            {!currentUser && <NavLink to="/signup">Inscription</NavLink>}
-            {!currentUser && <NavLink to="/login">Connection</NavLink>}
-
-            {currentUser && (
-              <NavLink to="/" onClick={() => this.logOutClick()}>
-                Déconnection
-              </NavLink>
-            )}
-          </div>
->>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
         </header>
 
         <section className="search-form">
