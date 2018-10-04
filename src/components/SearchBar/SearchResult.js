@@ -81,8 +81,5 @@ class SearchResult extends React.Component {
 }
 
 export default SearchResult;
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
