@@ -34,7 +34,7 @@ class IndividualCategory extends Component {
 
     api
       .get(`/material/${id}`)
-      .then(response => { 
+      .then(response => {
         // console.log("all items", response.data);
         response.data.sort((a, b) => {
           const aLower = a.fields.produits.toLowerCase();

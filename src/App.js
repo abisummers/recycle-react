@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CategoryResult from "./components/Categories/CategoryResult";
 import SearchResult from "./components/SearchBar/SearchResult";
@@ -21,6 +21,7 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
+      isLoginChecked: false,
       inputValue: "",
       facts: ""
     };
@@ -43,12 +44,11 @@ class App extends Component {
     this.setState({ inputValue: searchInput });
   }
 
-  // handleClick(randomclick) {
-  //   this.setState ({})
-  // }
-
   updateUser(userDoc) {
-    this.setState({ currentUser: userDoc });
+    this.setState({
+      currentUser: userDoc,
+      isLoginChecked: true
+    });
   }
 
   logOutClick() {
@@ -64,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.state;
+    const { currentUser, isLoginChecked } = this.state;
     return (
       <div>
         <React.Fragment>
@@ -85,19 +85,31 @@ class App extends Component {
         </React.Fragment>
 
         <header>
-        <NavLink exact to="/" className="app-title">
-        Recyclez-moi
+          <NavLink exact to="/" className="app-title">
+            Recyclez-moi
           </NavLink>
-      
+
           <NavLink exact to="/" className="nav-link">
             Accueil
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
-          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
+          {!currentUser && (
+            <NavLink to="/signup" className="nav-link">
+              Inscription
+            </NavLink>
+          )}
+          {!currentUser && (
+            <NavLink to="/login" className="nav-link">
+              Connection
+            </NavLink>
+          )}
 
           {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
+            <NavLink
+              to="/"
+              onClick={() => this.logOutClick()}
+              className="nav-link"
+            >
               Déconnection
             </NavLink>
           )}
@@ -150,9 +162,18 @@ class App extends Component {
 
           <Route
             path="/add"
-            render={() => (
-              <AddProduct addedProduct={userDoc => this.updateUser(userDoc)} />
-            )}
+            render={() =>
+              !isLoginChecked ? (
+                <p>Loading...</p>
+              ) : !currentUser ? (
+                <Redirect to="/login" />
+              ) : (
+                <AddProduct
+                  currentUser={currentUser}
+                  addedProduct={userDoc => this.updateUser(userDoc)}
+                />
+              )
+            }
           />
 
           <Route component={NotFound} />

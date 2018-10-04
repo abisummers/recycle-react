@@ -30,11 +30,11 @@ h2 {
   text-transform: uppercase;
 }
 
-.app-title{
-  font-family:'Lobster Two', cursive;
+.app-title {
+  font-family: "Lobster Two", cursive;
   font-size: 39px;
   margin: 0px 19px;
-  color:white;
+  color: white;
 }
 
 /* ---------------CLEAR FIX ------------ */
@@ -102,9 +102,8 @@ footer {
 
 /* --------------FUN FACTS ------------------ */
 
-
-.funFact{
-  font-family: 'Lobster Two', cursive;
+.funFact {
+  font-family: "Lobster Two", cursive;
   display: -ms-flexbox;
   /* display: flex; */
   width: 50%;
@@ -116,12 +115,12 @@ footer {
   text-align: center;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-.funFact-button{
-  color:  rgb(133, 189, 133);
+.funFact-button {
+  color: rgb(133, 189, 133);
   height: 43px;
   width: 45px;
   margin: auto;
@@ -132,16 +131,15 @@ li{
   border: 3px solid rgb(133, 189, 133);
 }
 
-
 /* -------------------SEARCH FORM -------------------- */
-.input-search[type=text] {
+.input-search[type="text"] {
   width: 206px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
-.input-search[type=text]:focus {
+.input-search[type="text"]:focus {
   width: 70%;
 }
 
@@ -217,7 +215,7 @@ li{
 }
 
 /* --------------CATEGORIES ------------------ */
-.toutes-categories{
+.toutes-categories {
   background-image: url("./images/allcat.jpg");
   background-size: cover;
   background-position: center;
@@ -258,78 +256,77 @@ li{
   background-size: cover;
   /* opacity: 0.9; */
 }
-.bois{
-    background-image: url("./images/bois.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-
-  }
-  .dechets-du-batiment{
-    background-image: url("./images/bat.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .dechets-de-cuisine{
-    background-image: url("./images/cuisine.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .dechets-dangereux{
-    background-image: url("./images/toxic.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .dechets-electriques-et-electroniques{
-    background-image: url("./images/elec.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .divers{
-    background-image: url("./images/allcat.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .metaux{
-    background-image: url("./images/metal.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .mobilier{
-    background-image: url("./images/mobilier.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .papiers-cartons{
-    background-image: url("./images/papier.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .plastiques{
-    background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .textiles-et-cuir{
-    background-image: url("./images/clothes.jpg");
-    background-size: cover;
-    background-position: center;
-    /* opacity: 0.9 */
-  }
-  .verre{
-    background-image: url("./images/verre.jpg");
-    background-size: cover;
-    /* opacity: 0.9 */
-  }
+.bois {
+  background-image: url("./images/bois.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-du-batiment {
+  background-image: url("./images/bat.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-de-cuisine {
+  background-image: url("./images/cuisine.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-dangereux {
+  background-image: url("./images/toxic.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.dechets-electriques-et-electroniques {
+  background-image: url("./images/elec.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.divers {
+  background-image: url("./images/allcat.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.metaux {
+  background-image: url("./images/metal.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.mobilier {
+  background-image: url("./images/mobilier.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.papiers-cartons {
+  background-image: url("./images/papier.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.plastiques {
+  background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.textiles-et-cuir {
+  background-image: url("./images/clothes.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9 */
+}
+.verre {
+  background-image: url("./images/verre.jpg");
+  background-size: cover;
+  /* opacity: 0.9 */
+}
 
   /* ----------------ONE CATEGORY LIST -------------- */
 
@@ -349,7 +346,7 @@ li{
 }
 
 .allCategories a {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   box-sizing: border-box;
   text-decoration: none;
   color: white;

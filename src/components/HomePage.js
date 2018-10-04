@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
 import FunFact from "./FunFact";
-// import { Component } from "react";
 
 function HomePage(props) {
   const { currentUser } = props;
   return (
     <section>
       <div className="funFact">
-        <FunFact handleEvent={(facts) => props.handleEvent(facts)}/>
+        <FunFact handleEvent={facts => props.handleEvent(facts)} />
       </div>
       {currentUser && <p className="hi-name">Hi, {currentUser.fullName}</p>}
 
@@ -24,7 +23,8 @@ function HomePage(props) {
 
         <Link
           to="/material/dechets-electriques-et-electroniques"
-          className="dechets-electriques-et-electroniques">
+          className="dechets-electriques-et-electroniques"
+        >
           ELECTRIQUES & ELECTRONIQUES
         </Link>
 

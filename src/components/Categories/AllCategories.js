@@ -59,7 +59,10 @@ class AllCategories extends Component {
         <ul className="allCategories clearfix">
           {categories.map(oneCategory => (
             <li key={oneCategory._id}>
-              <Link to={`/material/${oneCategory.id}`} className={oneCategory.id} >
+              <Link
+                to={`/material/${oneCategory.id}`}
+                className={oneCategory.id}
+              >
                 {oneCategory.label}
               </Link>
             </li>
