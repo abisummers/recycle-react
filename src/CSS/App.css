@@ -8,17 +8,35 @@ header {
   background-color: rgb(133, 189, 133);
   height: 50px;
   display: flex;
+  margin-bottom: 60px;
 }
 
 .nav-link {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin-right: 30px;
-  text-decoration: none;
   text-transform: uppercase;
-  color: white;
   text-align: left;
+  width: 100%;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.nav-link a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.app-title {
+  width: 20%;
+}
+
+.app-title a {
+  font-family: "Lobster Two", cursive;
+  font-size: 39px;
+  margin: 0px 19px;
+  color: white;
 }
 
 h1 {
@@ -28,13 +46,6 @@ h1 {
 h2 {
   text-align: center;
   text-transform: uppercase;
-}
-
-.app-title {
-  font-family: "Lobster Two", cursive;
-  font-size: 39px;
-  margin: 0px 19px;
-  color: white;
 }
 
 /* ---------------CLEAR FIX ------------ */
