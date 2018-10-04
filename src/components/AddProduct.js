@@ -200,7 +200,7 @@ class AddProduct extends Component {
             <input type="file" onChange={event => this.imageUpload(event)} />
           </label>
 
-          <img src={images} />
+          <img src={images} alt=""/>
 
           <label>
             typologie des dechets

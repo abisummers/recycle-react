@@ -1,6 +1,5 @@
 import React from "react";
 import api from "../../api.js";
-// import SearchBar from "./SearchBar.js";
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class SearchResult extends React.Component {
     api
       .get("/search-result")
       .then(response => {
-        console.log("List of products!!!!!", response.data);
+        console.log("List of products :", response.data);
         this.setState({ productsArray: response.data });
       })
       .catch(err => {
@@ -26,7 +25,6 @@ class SearchResult extends React.Component {
 
   render() {
     const { productsArray } = this.state;
-    console.log("coucou", this.props);
     return (
       <div>
         <section className="elements">
@@ -45,6 +43,7 @@ class SearchResult extends React.Component {
                       <img
                         src={oneProduct.fields.images}
                         className="product-image"
+                        alt=""
                       />
                       <div className="product-info">
                         <h3 className="product-title">
@@ -83,6 +82,4 @@ class SearchResult extends React.Component {
 
 export default SearchResult;
 
-{
-  /* <SearchBar handleEvent={event => this.handleEvent(event)} inputValue={this.state.inputValue} /> */
-}
+

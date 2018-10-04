@@ -16,7 +16,7 @@ class Login extends Component {
 
   openModal() {
     this.setState({
-      showModal: true,
+      showModal: true
     });
   }
 
@@ -63,8 +63,10 @@ class Login extends Component {
         <div className="log-sign-form">
           <form onSubmit={event => this.handleSubmit(event)}>
             <label>
-              visible={this.state.showModal}
-              onCloseModal={this.closeModal.bind(this)}
+              visible=
+              {this.state.showModal}
+              onCloseModal=
+              {this.closeModal.bind(this)}
               Email:
               <input
                 type="email"

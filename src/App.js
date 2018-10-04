@@ -12,8 +12,9 @@ import "./CSS/App.css";
 import "./index.css";
 import api from "./api";
 import FunFact from "./components/FunFact";
-
 import AddProduct from "./components/AddProduct";
+import Grandquizz from "./components/Quizz/Grandquizz";
+
 
 class App extends Component {
   constructor(props) {
@@ -81,10 +82,10 @@ class App extends Component {
         </React.Fragment>
 
         <header>
-        <NavLink exact to="/" className="app-title">
-        Recyclez-moi
+          <NavLink exact to="/" className="app-title">
+            Recyclez-moi
           </NavLink>
-      
+
           <NavLink exact to="/" className="nav-link">
             Accueil
           </NavLink>
@@ -97,9 +98,16 @@ class App extends Component {
               Déconnection
             </NavLink>
           )}
+
+
         </header>
 
         <Switch>
+          <Route
+            path="/quizz"
+            render={() => <Grandquizz inputValue={this.state.quizQuestions} />}
+          />
+
           <Route
             exact
             path="/"
