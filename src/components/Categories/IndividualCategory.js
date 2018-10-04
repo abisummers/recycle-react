@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NotFound from "../NotFound";
+// import NotFound from "../NotFound";
 import api from "../../api.js";
 
 const categories = [
@@ -36,6 +36,17 @@ class IndividualCategory extends Component {
       .get(`/material/${id}`)
       .then(response => { 
         // console.log("all items", response.data);
+        response.data.sort((a, b) => {
+          const aLower = a.fields.produits.toLowerCase();
+          const bLower = b.fields.produits.toLowerCase();
+    
+          if (aLower > bLower) {
+            return 1;
+          }
+          else {
+            return -1;
+          }
+        });
         this.setState({ productCategory: response.data });
       })
       .catch(err => {
@@ -46,20 +57,20 @@ class IndividualCategory extends Component {
 
   render() {
     const { productCategory } = this.state;
-    console.log(productCategory);
+    // console.log(productCategory);
 
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );
 
-    console.log(category);
+    // console.log(category);
 
     return (
       <section>
-        <h2>{category.label}</h2>
+        <h2 className="oneCategory-name">{category.label}</h2>
         <ul>
           {productCategory.map(oneCategory => (
-            <li key={oneCategory._id}>{oneCategory.fields.produits}</li>
+            <li key={oneCategory._id} className="product-list">{oneCategory.fields.produits}</li>
           ))}
         </ul>
       </section>

@@ -28,7 +28,7 @@ class CategoryResult extends React.Component {
   }
 
   render() {
-    const { _id, createdAt } = this.state;
+    const {  createdAt } = this.state;
     const {
       qu_est_ce_que_j_en_fais,
       comment_eviter_de_le_produire,
@@ -39,7 +39,7 @@ class CategoryResult extends React.Component {
     } = this.state.fields;
     return (
       <section>
-        <img src={images} />
+        <img src={images} alt="" />
         <h2>How to recycle {produits}? </h2>
         <h3>Where to throw it?</h3>
         <p>{qu_est_ce_que_j_en_fais}</p>

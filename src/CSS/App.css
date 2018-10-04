@@ -331,6 +331,16 @@ li{
     /* opacity: 0.9 */
   }
 
+  /* ----------------ONE CATEGORY LIST -------------- */
+
+  .oneCategory-name{
+    font-size: 40px;
+  }
+
+  .product-list{
+    margin-left: 20%;
+  }
+
 /* ----------------ALL CATEGORIES -------------- */
 
 .allCategories {

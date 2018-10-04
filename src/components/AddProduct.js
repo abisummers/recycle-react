@@ -123,8 +123,8 @@ class AddProduct extends Component {
   //--------------------- RENDER --------------------
 
   render() {
-    console.log("MY STATE", this.state);
-    console.log(productObj.value);
+    // console.log("MY STATE", this.state);
+    // console.log(productOb  j.value);
     const {
       produits,
       qu_est_ce_que_j_en_fais,
@@ -200,7 +200,7 @@ class AddProduct extends Component {
             <input type="file" onChange={event => this.imageUpload(event)} />
           </label>
 
-          <img src={images} />
+          <img src={images} alt=""/>
 
           <label>
             typologie des dechets
