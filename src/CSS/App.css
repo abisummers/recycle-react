@@ -8,17 +8,35 @@ header {
   background-color: rgb(133, 189, 133);
   height: 50px;
   display: flex;
+  margin-bottom: 60px;
 }
 
 .nav-link {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin-right: 30px;
-  text-decoration: none;
   text-transform: uppercase;
-  color: white;
   text-align: left;
+  width: 100%;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.nav-link a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.app-title {
+  width: 20%;
+}
+
+.app-title a {
+  font-family: "Lobster Two", cursive;
+  font-size: 39px;
+  margin: 0px 19px;
+  color: white;
 }
 
 h1 {
@@ -28,13 +46,6 @@ h1 {
 h2 {
   text-align: center;
   text-transform: uppercase;
-}
-
-.app-title {
-  font-family: "Lobster Two", cursive;
-  font-size: 39px;
-  margin: 0px 19px;
-  color: white;
 }
 
 /* ---------------CLEAR FIX ------------ */
@@ -63,21 +74,20 @@ footer {
 /* -----------------LOGIN/SIGNUP FORMS -------------- */
 
 .log-sign-form {
-  width: 50%;
+  width: 30%;
   display: block;
   text-align: center;
   margin: auto;
-  border: 1px black solid;
+  border: 1px rgb(185, 184, 184) solid;
   border-radius: 5px;
   margin-bottom: 60px;
 }
 
 .log-sign-form input {
   width: 50%;
-  margin: auto;
-  display: block;
   padding: 5px 0;
   border-radius: 1px;
+  margin-left: 10px;
 }
 
 .log-sign-form label {
@@ -88,7 +98,7 @@ footer {
 
 .log-sign-form form > button {
   text-align: center;
-  margin: auto;
+  margin-right: 18%;
   margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 5px;
@@ -98,6 +108,16 @@ footer {
 .log-sign-form form > button:hover {
   background-color: rgb(133, 189, 133);
   color: white;
+}
+
+form {
+  width: 70%;
+  text-align: right;
+  margin-left: 10px;
+}
+
+form > input {
+  text-align: left;
 }
 
 /* --------------FUN FACTS ------------------ */

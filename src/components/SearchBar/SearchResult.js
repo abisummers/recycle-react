@@ -1,6 +1,5 @@
 import React from "react";
 import api from "../../api.js";
-// import SearchBar from "./SearchBar.js";
 
 class SearchResult extends React.Component {
   constructor(props) {
