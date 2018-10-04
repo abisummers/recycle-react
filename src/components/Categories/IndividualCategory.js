@@ -26,7 +26,13 @@ class Popup extends React.Component {
     return (
       <div className="popup">
         <div className="popup_inner">
-          <h1>{this.props.text}</h1>
+          <p className="popup-p">{this.props.text2}</p>
+          <p className="popup-p">{this.props.text3}</p>
+          <p className="popup-p">{this.props.text4}</p>
+          <p className="popup-p">{this.props.text5}</p>
+          <p className="popup-p">{this.props.text6}</p>
+          <p className="popup-p">{this.props.text7}</p>
+
           <button onClick={this.props.closePopup} className="close-popup">
             Fermer
           </button>
@@ -46,11 +52,11 @@ class IndividualCategory extends Component {
     };
   }
   togglePopup(index) {
-    const {productCategory} = this.state;
+    const { productCategory } = this.state;
     let productCategoryCopy = [...productCategory];
-    productCategoryCopy[index].showPopup= !productCategoryCopy[index].showPopup
+    productCategoryCopy[index].showPopup = !productCategoryCopy[index].showPopup
     this.setState({
-      productCategory: productCategoryCopy 
+      productCategory: productCategoryCopy
     });
   }
 
@@ -81,33 +87,36 @@ class IndividualCategory extends Component {
 
   render() {
     const { productCategory } = this.state;
-    // console.log(productCategory);
-
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );
-    // console.log(category);
-
     return (
       <section>
         <h2 className="oneCategory-name">{category.label}</h2>
 
         <ul>
           {productCategory.map((oneCategory, index) => (
-            
+
             <button
-              onClick={()=>this.togglePopup(index)}
+              onClick={() => this.togglePopup(index)}
               className="popup-button"
             >
               <li key={oneCategory._id} className="product-list">
-                {oneCategory.fields.produits}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png" className="image-product"/>
+              <p>{oneCategory.fields.produits}</p>
               </li>
               {oneCategory.showPopup && (
                 <Popup
-                  text={oneCategory.fields.produits}
-                  closePopup={()=>this.togglePopup}
+                  text2="Type:"
+                  text3={oneCategory.fields.typologie_des_dechets}
+                  text4="Qu'est-ce que j'en fais ? :"
+                  text5={oneCategory.fields.qu_est_ce_que_j_en_fais}
+                  text6="Que va-t-il devenir ? :"
+                  text7={oneCategory.fields.que_va_t_il_devenir}
+                  closePopup={() => this.togglePopup}
                 />
-              ) }
+                
+              )}
             </button>
           ))}
         </ul>
@@ -117,3 +126,5 @@ class IndividualCategory extends Component {
 }
 
 export default IndividualCategory;
+
+
