@@ -8,6 +8,7 @@
     "bulma": "^0.7.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-popup": "^0.9.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },

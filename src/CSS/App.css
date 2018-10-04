@@ -329,15 +329,30 @@ li {
 }
 
   /* ----------------ONE CATEGORY LIST -------------- */
-
+  .popup{
+    border: 2px green solid;
+    position: absolute;
+  }
   .oneCategory-name{
     font-size: 40px;
   }
 
   .product-list{
-    margin-left: 20%;
-  }
+    font-size:20px;
+  } 
 
+  .popup-button{
+    background: none;
+    border: none;
+    display: flex;
+  }
+  .popup_inner {
+    
+    border: 2px blue solid;
+  }
+  .close-popup{
+  margin: 0 40%;
+  }
 /* ----------------ALL CATEGORIES -------------- */
 
 .allCategories {
