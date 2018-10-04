@@ -59,10 +59,6 @@ class Login extends Component {
 
     return (
       <section className="login-container">
-<<<<<<< HEAD
-        <h2>Login</h2>
-=======
->>>>>>> 452ba03c63d99f41fd305fa382560780932aaad3
         <div className="log-sign-form">
           <h2>Login</h2>
           <form onSubmit={event => this.handleSubmit(event)}>
