@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../../api";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -69,6 +69,7 @@ class Login extends Component {
             </label>
 
             <button>Login</button>
+            <Link to="signup">Or sign up</Link>
           </form>
         </div>
       </section>
