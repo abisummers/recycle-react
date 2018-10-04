@@ -10,7 +10,7 @@ header {
   display: flex;
 }
 
-header a {
+.nav-link {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -18,16 +18,23 @@ header a {
   text-decoration: none;
   text-transform: uppercase;
   color: white;
+  text-align: left;
 }
 
 h1 {
   text-align: center;
 }
 
-
 h2 {
   text-align: center;
   text-transform: uppercase;
+}
+
+.app-title{
+  font-family:'Lobster Two', cursive;
+  font-size: 39px;
+  margin: 0px 19px;
+  color:white;
 }
 
 /* ---------------CLEAR FIX ------------ */
@@ -92,19 +99,52 @@ footer {
   background-color: rgb(133, 189, 133);
   color: white;
 }
+
+/* --------------FUN FACTS ------------------ */
+
+
+.funFact{
+  font-family: 'Lobster Two', cursive;
+  display: -ms-flexbox;
+  /* display: flex; */
+  width: 50%;
+  margin: 40px auto;
+  -ms-flex-pack: center;
+  /* justify-content: center; */
+  font-size: 20px;
+  /* border: solid 2px blue; */
+  text-align: center;
+}
+
+li{
+  list-style-type: none;
+}
+
+.funFact-button{
+  color:  rgb(133, 189, 133);
+  height: 43px;
+  width: 45px;
+  margin: auto;
+  font-size: 22px;
+}
+
+.funFact button:hover {
+  border: 3px solid rgb(133, 189, 133);
+}
+
+
 /* -------------------SEARCH FORM -------------------- */
-input[type=text] {
-  width: 130px;
+.input-search[type=text] {
+  width: 206px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
+.input-search[type=text]:focus {
   width: 70%;
 }
 
- 
 .search-form {
   width: 80%;
   border-radius: 5px;
@@ -115,7 +155,6 @@ input[type=text]:focus {
 }
 
 .search-form input {
-
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -130,18 +169,18 @@ input[type=text]:focus {
 .search-form button {
   background-color: rgb(133, 189, 133);
   width: 5%;
-  padding: 8px;
+  padding: 9px;
   /* background: #2196F3; */
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 2px solid grey;
   border-left: none;
   cursor: pointer;
 }
 
 .search-form button:hover {
   border: 3px solid rgb(133, 189, 133);
-} 
+}
 /* ----------------HOME PAGE BUTTONS ----------------- */
 
 .row {
@@ -163,121 +202,134 @@ input[type=text]:focus {
   margin-bottom: 60px;
   border: black 1px solid;
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: bold;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 .row > a:hover {
   border: 3px solid rgb(133, 189, 133);
 }
 
-
-
 /* --------------CATEGORIES ------------------ */
 .toutes-categories{
-  background-image: url("./allcat.jpg");
+  background-image: url("./images/allcat.jpg");
   background-size: cover;
   background-position: center;
+  /* opacity: 0.9; */
+}
+.metaux {
+  background-image: url("./images/metal.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9; */
+}
+.mobilier {
+  background-image: url("./images/mobilier.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9; */
+}
+.papiers-cartons {
+  background-image: url("./images/papier.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9; */
+}
+.plastiques {
+  background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9; */
+}
+.textiles-et-cuir {
+  background-image: url("./images/clothes.jpg");
+  background-size: cover;
+  background-position: center;
+  /* opacity: 0.9; */
+}
+.verre {
+  background-image: url("./images/verre.jpg");
+  background-size: cover;
+  /* opacity: 0.9; */
 }
 .bois{
-    background-image: url("./bois.jpg");
+    background-image: url("./images/bois.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
 
   }
   .dechets-du-batiment{
-    background-image: url("./bat.jpg");
+    background-image: url("./images/bat.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .dechets-de-cuisine{
-    background-image: url("./cuisine.jpg");
+    background-image: url("./images/cuisine.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .dechets-dangereux{
-    background-image: url("./toxic.jpg");
+    background-image: url("./images/toxic.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .dechets-electriques-et-electroniques{
-    background-image: url("./elec.jpg");
+    background-image: url("./images/elec.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .divers{
-    background-image: url("./allcat.jpg");
+    background-image: url("./images/allcat.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .metaux{
-    background-image: url("./metal.jpg");
+    background-image: url("./images/metal.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .mobilier{
-    background-image: url("./mobilier.jpg");
+    background-image: url("./images/mobilier.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .papiers-cartons{
-    background-image: url("./papier.jpg");
+    background-image: url("./images/papier.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .plastiques{
-    background-image: url("./jonathan-chng-1057613-unsplash.jpg");
+    background-image: url("./images/jonathan-chng-1057613-unsplash.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .textiles-et-cuir{
-    background-image: url("./clothes.jpg");
+    background-image: url("./images/clothes.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
   .verre{
-    background-image: url("./verre.jpg");
+    background-image: url("./images/verre.jpg");
     background-size: cover;
-    opacity: 0.9
+    /* opacity: 0.9 */
   }
-
-/* --------------FUN FACTS ------------------ */
-
-.funFact {
-  font-family: 'Lobster Two', cursive;
-  display: flex;
-  width: 50%;
-  margin: 40px auto;
-  justify-content: flex-end;
-  font-size: 20px
-}
-
-.funFact-button{
-  color:  rgb(133, 189, 133);
-  height: 43px;
-  width: 45px;
-  margin: auto;
-  font-size: 22px;
-}
-
-.funFact button:hover {
-  border: 3px solid rgb(133, 189, 133);
-}
 
 /* ----------------ALL CATEGORIES -------------- */
 
@@ -287,6 +339,7 @@ input[type=text]:focus {
 }
 
 .allCategories a {
+  font-family: 'Oswald', sans-serif;
   box-sizing: border-box;
   text-decoration: none;
   color: white;
@@ -299,8 +352,8 @@ input[type=text]:focus {
   height: 150px;
   float: left;
   font-weight: bold;
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: black;
+  /* -webkit-text-stroke: 2px; */
+  /* -webkit-text-stroke-color: black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,7 +369,7 @@ input[type=text]:focus {
 
 /*//////////////////////////////////////////////////////////////////
 [ SEARCH RESULT ]*/
-.product-container{
+.product-container {
   /* border: 2px solid blue; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -325,19 +378,18 @@ input[type=text]:focus {
   width: 80%;
   min-height: 300px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
-.product-image{
+.product-image {
   width: 175px;
-  margin-right:5px;
+  margin-right: 5px;
 }
-.product-info{
+.product-info {
   /* border: 2px solid green; */
   width: 750px;
-  margin-left: 35px; 
-  
+  margin-left: 35px;
 }
-.product-title{
+.product-title {
   margin: 0 auto;
 }

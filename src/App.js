@@ -63,25 +63,38 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div>
-      <React.Fragment>
-      <style>
-      @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two');
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"></link>
-      </style>
-      </React.Fragment>
+        <React.Fragment>
+          <style>
+            @import
+            url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two|Oswald:600');
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+              integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+              crossOrigin="anonymous"
+            />
+          </style>
+        </React.Fragment>
 
         <header>
-          <NavLink exact to="/">
-            Home
+        <NavLink exact to="/" className="app-title">
+        Recyclez-moi
+          </NavLink>
+      
+          <NavLink exact to="/" className="nav-link">
+            Accueil
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup"> Sign up</NavLink>}
-          {!currentUser && <NavLink to="/login">Login</NavLink>}
+          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
+          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
 
           {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()}>
-              Logout
+            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
+              Déconnection
             </NavLink>
           )}
         </header>
@@ -131,7 +144,13 @@ class App extends Component {
             )}
           />
 
-          <Route path="/add" component={AddProduct} />
+          <Route
+            path="/add"
+            render={() => (
+              <AddProduct addedProduct={userDoc => this.updateUser(userDoc)} />
+            )}
+          />
+
           <Route component={NotFound} />
         </Switch>
 

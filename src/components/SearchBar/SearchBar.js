@@ -1,5 +1,4 @@
 import React from "react";
-import SearchResult from "./SearchResult";
 import { Redirect } from "react-router-dom";
 
 class SearchBar extends React.Component {
@@ -39,7 +38,7 @@ class SearchBar extends React.Component {
             onChange={event => this.handleChange(event)}
           />
         
-        <button className="search-button"><i class="fa fa-search"></i></button>
+        <button className="search-button"><i className="fa fa-search"></i></button>
       </form>
     );
   }
@@ -48,7 +47,7 @@ class SearchBar extends React.Component {
 
 export default SearchBar;
 
-{/* <form class="example" action="action_page.php">
+{/* <form className="example" action="action_page.php">
   <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
+  <button type="submit"><i className="fa fa-search"></i></button>
 </form> */}
