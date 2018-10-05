@@ -136,3 +136,7 @@ body {
 .failure {
     border : 3px solid red;
 }
+
+.results {
+    margin-bottom : 4px;
+}
