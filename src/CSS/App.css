@@ -1,37 +1,53 @@
 body {
-  height: 100%;
   position: relative;
   font-family: "Barlow Semi Condensed", sans-serif;
   background: #eee;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-header {
+.header {
   background-color: rgb(133, 189, 133);
-  height: 50px;
-  display: flex;
+  height: 60px;
   margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-link {
-  display: flex;
-  -ms-flex-align: center;
   align-items: center;
   margin-right: 30px;
   text-transform: uppercase;
-  /* text-align: center; */
-  width: 13%;
+  text-align: left;
+  width: 100%;
   margin: 0;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
   color: white;
+}
+
+.nav-link a {
+  display: flex;
   text-decoration: none;
+  margin-right: 20px;
 }
 
 .app-title {
-  width: 55%;
   font-family: "Lobster Two", cursive;
   font-size: 39px;
   margin: 0px 19px;
+  color: white;
+  align-items: center;
+  text-decoration: underline;
+}
+
+.app-title:hover,
+.nav-link:hover {
   color: white;
 }
 
@@ -59,19 +75,24 @@ h2 {
 
 /* -----------------FOOTER ----------------- */
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
 footer {
   background-color: rgb(133, 189, 133);
   height: 40px;
-  /* position: fixed; */
   width: 100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
   color: white;
   text-transform: uppercase;
   text-align: center;
-  display: flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 footer a {
@@ -193,7 +214,7 @@ form > input {
   display: -ms-flexbox;
   width: 50%;
   margin: 40px auto;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
 }
 
@@ -243,7 +264,7 @@ li {
 
 .search-form > .form-search input {
   padding: 10px;
-  font-size: 17px;
+  font-size: 22px;
   border: 1px solid grey;
   width: 50%;
   background: #f1f1f1;
@@ -259,7 +280,7 @@ li {
   padding: 9px;
   /* background: #2196F3; */
   color: white;
-  font-size: 17px;
+  font-size: 22px;
   border: 2px solid grey;
   border-left: none;
   cursor: pointer;
@@ -299,7 +320,9 @@ li {
 }
 
 .row > a:hover {
-  border: 3px solid rgb(133, 189, 133);
+  border: 5px solid rgb(133, 189, 133);
+  color: white;
+  text-decoration: none;
 }
 
 /* --------------CATEGORIES ------------------ */
