@@ -86,131 +86,141 @@ class App extends Component {
           </style>
         </React.Fragment>
 
-        <header class="header">
-          <NavLink exact to="/" className="app-title">
-            Recyclez-moi
-          </NavLink>
-
-          <div className="nav-bar">
-            <NavLink exact to="/quizz" className="nav-link">
-              QUIZ
+        <body className="site">
+          <header class="header">
+            <NavLink exact to="/" className="app-title">
+              Recyclez-moi
             </NavLink>
 
-            {!currentUser && (
-              <NavLink className="nav-link" to="/signup">
-                Inscription
+            <div className="nav-bar">
+              <NavLink exact to="/quizz" className="nav-link">
+                QUIZ
               </NavLink>
-            )}
-            {!currentUser && (
-              <NavLink className="nav-link" to="/login">
-                Connection
-              </NavLink>
-            )}
 
-            {currentUser && (
-              <NavLink
-                className="nav-link"
-                to="/"
-                onClick={() => this.logOutClick()}
+              {!currentUser && (
+                <NavLink className="nav-link" to="/signup">
+                  Inscription
+                </NavLink>
+              )}
+              {!currentUser && (
+                <NavLink className="nav-link" to="/login">
+                  Connection
+                </NavLink>
+              )}
+
+              {currentUser && (
+                <NavLink
+                  className="nav-link"
+                  to="/"
+                  onClick={() => this.logOutClick()}
+                >
+                  Déconnection
+                </NavLink>
+              )}
+            </div>
+          </header>
+
+          <section className="site-content">
+            <section className="search-form">
+              <SearchBar handleEvent={event => this.handleEvent(event)} />
+            </section>
+
+            <Switch>
+              <Route
+                path="/quizz"
+                render={() => (
+                  <Grandquizz inputValue={this.state.quizQuestions} />
+                )}
+              />
+
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <HomePage
+                    currentUser={currentUser}
+                    handleEvent={event => this.handleEvent(event)}
+                  />
+                )}
+              />
+              <Route
+                path="/facts"
+                render={() => <FunFact facts={this.state.facts} />}
+              />
+
+              <Route path="/category-result" component={CategoryResult} />
+              <Route
+                path="/search-result"
+                render={() => (
+                  <SearchResult inputValue={this.state.inputValue} />
+                )}
+              />
+
+              <Route path="/all-categories" component={AllCategories} />
+
+              {/* link to caterogy page eg glass or plastic */}
+              <Route path="/material/:id" component={IndividualCategory} />
+              <Route
+                path="/signup"
+                render={() => (
+                  <SignUp
+                    // currentUser={currentUser}
+                    onSignUp={userDoc => this.updateUser(userDoc)}
+                  />
+                )}
+              />
+              <Route
+                path="/login"
+                render={() => (
+                  <Login
+                    currentUser={currentUser}
+                    onLogin={userDoc => this.updateUser(userDoc)}
+                  />
+                )}
+              />
+
+              <Route
+                path="/add"
+                render={() =>
+                  !isLoginChecked ? (
+                    <p>Loading...</p>
+                  ) : !currentUser ? (
+                    <Redirect to="/login" />
+                  ) : (
+                    <AddProduct
+                      currentUser={currentUser}
+                      addedProduct={userDoc => this.updateUser(userDoc)}
+                    />
+                  )
+                }
+              />
+
+              <Route component={NotFound} />
+            </Switch>
+          </section>
+          <footer>
+            <p>
+              Made by{" "}
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/manonsalaun/"
               >
-                Déconnection
-              </NavLink>
-            )}
-          </div>
-        </header>
-
-        <section className="search-form">
-          <SearchBar handleEvent={event => this.handleEvent(event)} />
-        </section>
-
-        <Switch>
-          <Route
-            path="/quizz"
-            render={() => <Grandquizz inputValue={this.state.quizQuestions} />}
-          />
-
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <HomePage
-                currentUser={currentUser}
-                handleEvent={event => this.handleEvent(event)}
-              />
-            )}
-          />
-          <Route
-            path="/facts"
-            render={() => <FunFact facts={this.state.facts} />}
-          />
-
-          <Route path="/category-result" component={CategoryResult} />
-          <Route
-            path="/search-result"
-            render={() => <SearchResult inputValue={this.state.inputValue} />}
-          />
-
-          <Route path="/all-categories" component={AllCategories} />
-
-          {/* link to caterogy page eg glass or plastic */}
-          <Route path="/material/:id" component={IndividualCategory} />
-          <Route
-            path="/signup"
-            render={() => (
-              <SignUp
-                // currentUser={currentUser}
-                onSignUp={userDoc => this.updateUser(userDoc)}
-              />
-            )}
-          />
-          <Route
-            path="/login"
-            render={() => (
-              <Login
-                currentUser={currentUser}
-                onLogin={userDoc => this.updateUser(userDoc)}
-              />
-            )}
-          />
-
-          <Route
-            path="/add"
-            render={() =>
-              !isLoginChecked ? (
-                <p>Loading...</p>
-              ) : !currentUser ? (
-                <Redirect to="/login" />
-              ) : (
-                <AddProduct
-                  currentUser={currentUser}
-                  addedProduct={userDoc => this.updateUser(userDoc)}
-                />
-              )
-            }
-          />
-
-          <Route component={NotFound} />
-        </Switch>
-
-        <footer>
-          <p>
-            Made by{" "}
-            <a target="_blank" href="https://www.linkedin.com/in/manonsalaun/">
-              Manon
-            </a>
-            ,{" "}
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/julie-m%C3%A9nard/"
-            >
-              Julie
-            </a>{" "}
-            and{" "}
-            <a target="_blank" href="https://www.linkedin.com/in/abisummers/">
-              Abi
-            </a>
-          </p>
-        </footer>
+                Manon
+              </a>
+              ,{" "}
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/julie-m%C3%A9nard/"
+              >
+                Julie
+              </a>{" "}
+              and{" "}
+              <a target="_blank" href="https://www.linkedin.com/in/abisummers/">
+                Abi
+              </a>
+            </p>
+          </footer>
+        </body>
       </div>
     );
   }

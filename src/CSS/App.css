@@ -1,8 +1,10 @@
 body {
-  height: 100%;
   position: relative;
   font-family: "Barlow Semi Condensed", sans-serif;
   background: #eee;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .header {
@@ -41,6 +43,12 @@ body {
   margin: 0px 19px;
   color: white;
   align-items: center;
+  text-decoration: underline;
+}
+
+.app-title:hover,
+.nav-link:hover {
+  color: white;
 }
 
 h1 {
@@ -67,19 +75,24 @@ h2 {
 
 /* -----------------FOOTER ----------------- */
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
 footer {
   background-color: rgb(133, 189, 133);
   height: 40px;
-  /* position: fixed; */
   width: 100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
   color: white;
   text-transform: uppercase;
   text-align: center;
-  display: flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 footer a {
@@ -201,7 +214,7 @@ form > input {
   display: -ms-flexbox;
   width: 50%;
   margin: 40px auto;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
 }
 
