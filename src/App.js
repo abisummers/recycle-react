@@ -86,35 +86,37 @@ class App extends Component {
           </style>
         </React.Fragment>
 
-        <header>
+        <header class="header">
           <NavLink exact to="/" className="app-title">
             Recyclez-moi
           </NavLink>
 
-          <NavLink exact to="/" className="nav-link">
-            Accueil
-          </NavLink>
+          <div className="nav-bar">
+            <NavLink exact to="/" className="nav-link">
+              Accueil
+            </NavLink>
 
-          {!currentUser && (
-            <NavLink to="/signup" className="nav-link">
-              Inscription
-            </NavLink>
-          )}
-          {!currentUser && (
-            <NavLink to="/login" className="nav-link">
-              Connection
-            </NavLink>
-          )}
+            {!currentUser && (
+              <NavLink className="nav-link" to="/signup">
+                Inscription
+              </NavLink>
+            )}
+            {!currentUser && (
+              <NavLink className="nav-link" to="/login">
+                Connection
+              </NavLink>
+            )}
 
-          {currentUser && (
-            <NavLink
-              to="/"
-              onClick={() => this.logOutClick()}
-              className="nav-link"
-            >
-              Déconnection
-            </NavLink>
-          )}
+            {currentUser && (
+              <NavLink
+                className="nav-link"
+                to="/"
+                onClick={() => this.logOutClick()}
+              >
+                Déconnection
+              </NavLink>
+            )}
+          </div>
         </header>
 
         <section className="search-form">
@@ -191,8 +193,23 @@ class App extends Component {
         </Switch>
 
         <footer>
-          <p>Made by <a target="_blank" href="https://www.linkedin.com/in/manonsalaun/">Manon</a>, <a target="_blank" href="https://www.linkedin.com/in/julie-m%C3%A9nard/">Julie</a> and <a target="_blank" href="https://www.linkedin.com/in/abisummers/">Abi</a></p>
-
+          <p>
+            Made by{" "}
+            <a target="_blank" href="https://www.linkedin.com/in/manonsalaun/">
+              Manon
+            </a>
+            ,{" "}
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/julie-m%C3%A9nard/"
+            >
+              Julie
+            </a>{" "}
+            and{" "}
+            <a target="_blank" href="https://www.linkedin.com/in/abisummers/">
+              Abi
+            </a>
+          </p>
         </footer>
       </div>
     );
