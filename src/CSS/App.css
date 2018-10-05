@@ -455,7 +455,7 @@ li {
 }
 .catList{
   /* border:2px solid blueviolet; */
-  height: 50vh;
+  height: 70vh;
   overflow: scroll;
   width: 50vw;
 }
