@@ -98,7 +98,7 @@ class App extends Component {
 
             {currentUser && (
               <NavLink to="/" onClick={() => this.logOutClick()}>
-                Déconnection
+                Déconnexion
               </NavLink>
             )}
           </div>
