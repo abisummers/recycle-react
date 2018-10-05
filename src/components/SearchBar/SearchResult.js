@@ -40,8 +40,10 @@ class SearchResult extends React.Component {
                     .includes(this.props.inputValue.toLowerCase())) && (
                   <section className="SearchResult-container">
                     <li key={index} className="product-container">
+                    
+
                       <img
-                        src={oneProduct.fields.images}
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png"
                         className="product-image"
                         alt=""
                       />
