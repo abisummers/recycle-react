@@ -92,8 +92,8 @@ class App extends Component {
           </NavLink>
 
           <div className="nav-bar">
-            <NavLink exact to="/" className="nav-link">
-              Accueil
+            <NavLink exact to="/quizz" className="nav-link">
+              QUIZ
             </NavLink>
 
             {!currentUser && (
