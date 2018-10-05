@@ -13,31 +13,30 @@ header {
 
 .nav-link {
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
   margin-right: 30px;
   text-transform: uppercase;
-  text-align: left;
-  width: 100%;
+  /* text-align: center; */
+  width: 13%;
   margin: 0;
+  -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.nav-link a {
   color: white;
   text-decoration: none;
-  margin-right: 20px;
 }
+
+
 
 .app-title {
-  width: 30%;
-}
-
-.app-title a {
+  width: 55%;
   font-family: "Lobster Two", cursive;
   font-size: 39px;
   margin: 0px 19px;
   color: white;
 }
+
+
 
 h1 {
   text-align: center;
@@ -143,19 +142,24 @@ form > input {
 /* --------------FUN FACTS ------------------ */
 
 .funFact {
+  font-family:"Lobster Two", cursive;
   display: -ms-flexbox;
-  /* display: flex; */
   width: 50%;
   margin: 40px auto;
-  -ms-flex-pack: center;
-  /* justify-content: center; */
-  font-size: 20px;
-  /* border: solid 2px blue; */
+  font-size: 25px;
   text-align: center;
+}
+
+.funFact h1{
+  font-size:31px;
+  
 }
 
 li {
   list-style-type: none;
+}
+.funFact ul{
+  padding:0;
 }
 
 .funFact-button {
@@ -195,7 +199,7 @@ li {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
-  width: 30%;
+  width: 50%;
   background: #f1f1f1;
 }
 
@@ -469,4 +473,129 @@ li {
 
 popover {
   border : 1px, black, solid;
+}
+
+
+/* ///QUIZZ///////////////////////////////////////////// */
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+}
+ 
+@media (min-width: 769px) {
+  .container {
+    margin: 2.5rem auto;
+  }
+}
+ 
+/* Result Component */
+.result {
+  padding: 1.5rem 2.5rem;
+}
+ 
+/* Quiz Component */
+.answerOptions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+/* QuestionCount Component */
+.questionCount {
+  padding: 1.5rem 2.5rem 0;
+  font-size: 14px;
+}
+ 
+/* Question Component */
+.question {
+  margin: 0;
+  padding: 0.5rem 2.5rem 1.5rem 2.5rem;
+}
+ 
+/* AnswerOption Component */
+.answerOption {
+  border-top: 1px solid #eee;
+}
+ 
+.answerOption:hover {
+  background-color: #eefbfe;
+}
+ 
+.radioCustomButton {
+    position: absolute;
+    width: auto;
+    opacity: 0;
+}
+ 
+.radioCustomButton,
+.radioCustomLabel {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+ 
+.radioCustomLabel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem 2.5rem 1.5rem 5rem;
+    font-size: 16px;
+    line-height: 1.5;
+}
+ 
+.radioCustomButton ~ .radioCustomLabel:before {
+    position: absolute;
+    top: 20px;
+    left: 38px;
+    width: 28px;
+    height: 28px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+ 
+.radioCustomButton:checked ~ .radioCustomLabel:before {
+    content: '';
+    /* background: #8BC53F url(./svg/icon-check.svg) no-repeat; */
+    background-size: 27px;
+    border-color: #8BC53F;
+}
+ 
+/* Animation */
+.fade-enter {
+    opacity: 0;
+}
+ 
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: 0.5s ease-in-out 0.3s;
+}
+ 
+.fade-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+}
+ 
+.fade-leave.fade-leave-active {
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+ 
+.fade-appear {
+    opacity: 0;
+}
+ 
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }

@@ -22,7 +22,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "engines":{
+  "engines": {
     "node": "10.9.0"
   }
 }
