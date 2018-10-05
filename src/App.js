@@ -72,7 +72,7 @@ class App extends Component {
         <React.Fragment>
           <style>
             @import
-            url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two|Oswald:600');
+            url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two|Oswald:600");
             <link
               rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -95,16 +95,26 @@ class App extends Component {
             Accueil
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
-          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
-
-          {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
-              Déconnection
+          {!currentUser && (
+            <NavLink to="/signup" className="nav-link">
+              Inscription
+            </NavLink>
+          )}
+          {!currentUser && (
+            <NavLink to="/login" className="nav-link">
+              Connection
             </NavLink>
           )}
 
-
+          {currentUser && (
+            <NavLink
+              to="/"
+              onClick={() => this.logOutClick()}
+              className="nav-link"
+            >
+              Déconnection
+            </NavLink>
+          )}
         </header>
 
         <section className="search-form">
@@ -181,7 +191,8 @@ class App extends Component {
         </Switch>
 
         <footer>
-          <p>Made by Manon, Julie and Abi</p>
+          <p>Made by <a target="_blank" href="https://www.linkedin.com/in/manonsalaun/">Manon</a>, <a target="_blank" href="https://www.linkedin.com/in/julie-m%C3%A9nard/">Julie</a> and <a target="_blank" href="https://www.linkedin.com/in/abisummers/">Abi</a></p>
+
         </footer>
       </div>
     );

@@ -1,15 +1,12 @@
-import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Question from './question';
-import QuestionCount from './questioncount';
-import AnswerOption from './answeroption';
-import PropTypes from 'prop-types';
-
-import '../../CSS/quizz.css';
-
+import React from "react";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import Question from "./question";
+import QuestionCount from "./questioncount";
+import AnswerOption from "./answeroption";
+import PropTypes from "prop-types";
+import "../../CSS/quizz.css";
 
 function Quiz(props) {
-
   function renderAnswerOptions(key) {
     return (
       <AnswerOption
@@ -36,10 +33,7 @@ function Quiz(props) {
       transitionAppearTimeout={500}
     >
       <div key={props.questionId}>
-        <QuestionCount
-          counter={props.questionId}
-          total={props.questionTotal}
-        />
+        <QuestionCount counter={props.questionId} total={props.questionTotal} />
         <Question content={props.question} />
         <ul className="answerOptions">
           {props.answerOptions.map(renderAnswerOptions)}

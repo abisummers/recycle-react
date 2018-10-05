@@ -134,15 +134,10 @@ class AddProduct extends Component {
     } = this.state.field;
 
     const { currentUser } = this.props;
-    console.log(currentUser);
-
-    // if (userDoc === null) {
-    //   <Redirect to="/" />;
-    // }
 
     return (
-      <section>
-        <h2>ADD</h2>
+      <section className="add-product">
+        <h2>ADD A PRODUCT</h2>
         <form onSubmit={event => this.handleSubmit(event)}>
           <label>
             Produits
@@ -187,7 +182,7 @@ class AddProduct extends Component {
               value={comment_eviter_de_le_produire}
               type="text"
               onChange={event => this.produitProduire(event)}
-              placeholder="comment_eviter_de_le_produire"
+              placeholder="Comment eviter de le produire"
             />
           </label>
 
@@ -197,7 +192,7 @@ class AddProduct extends Component {
               value={que_va_t_il_devenir}
               type="text"
               onChange={event => this.produitDevenir(event)}
-              placeholder="que_va_t_il_devenir"
+              placeholder="Que va t'il devenir"
             />
           </label>
 
@@ -206,7 +201,7 @@ class AddProduct extends Component {
             <input type="file" onChange={event => this.imageUpload(event)} />
           </label>
 
-          <img src={images} alt="new product" />
+          <img src={images} alt="" />
 
           <label>
             typologie des dechets
