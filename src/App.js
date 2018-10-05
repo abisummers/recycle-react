@@ -95,17 +95,26 @@ class App extends Component {
             Accueil
           </NavLink>
 
-          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
-          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
-
-          {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
-              Déconnection
+          {!currentUser && (
+            <NavLink to="/signup" className="nav-link">
+              Inscription
+            </NavLink>
+          )}
+          {!currentUser && (
+            <NavLink to="/login" className="nav-link">
+              Connection
             </NavLink>
           )}
 
-
-         
+          {currentUser && (
+            <NavLink
+              to="/"
+              onClick={() => this.logOutClick()}
+              className="nav-link"
+            >
+              Déconnection
+            </NavLink>
+          )}
         </header>
 
         <section className="search-form">
