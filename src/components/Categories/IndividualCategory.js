@@ -22,7 +22,6 @@ const categories = [
 
 class Popup extends React.Component {
   render() {
-
     return (
       <div className="popup">
         <div className="popup_inner">
@@ -54,7 +53,8 @@ class IndividualCategory extends Component {
   togglePopup(index) {
     const { productCategory } = this.state;
     let productCategoryCopy = [...productCategory];
-    productCategoryCopy[index].showPopup = !productCategoryCopy[index].showPopup
+    productCategoryCopy[index].showPopup = !productCategoryCopy[index]
+      .showPopup;
     this.setState({
       productCategory: productCategoryCopy
     });
@@ -66,7 +66,6 @@ class IndividualCategory extends Component {
     api
       .get(`/material/${id}`)
       .then(response => {
-        // console.log("all items", response.data);
         response.data.sort((a, b) => {
           const aLower = a.fields.produits.toLowerCase();
           const bLower = b.fields.produits.toLowerCase();
@@ -96,14 +95,17 @@ class IndividualCategory extends Component {
 
         <ul>
           {productCategory.map((oneCategory, index) => (
-
             <button
               onClick={() => this.togglePopup(index)}
               className="popup-button"
             >
               <li key={oneCategory._id} className="product-list">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png" className="image-product" alt=""/>
-              <p>{oneCategory.fields.produits}</p>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png"
+                  className="image-product"
+                  alt=""
+                />
+                <p>{oneCategory.fields.produits}</p>
               </li>
               {oneCategory.showPopup && (
                 <Popup
@@ -115,7 +117,6 @@ class IndividualCategory extends Component {
                   text7={oneCategory.fields.que_va_t_il_devenir}
                   closePopup={() => this.togglePopup}
                 />
-                
               )}
             </button>
           ))}
@@ -126,5 +127,3 @@ class IndividualCategory extends Component {
 }
 
 export default IndividualCategory;
-
-

@@ -16,7 +16,6 @@ const productObj = {
   Verre: "verre"
 };
 
-console.log(productObj);
 class AddProduct extends Component {
   constructor(props) {
     super(props);
@@ -122,8 +121,6 @@ class AddProduct extends Component {
   //--------------------- RENDER --------------------
 
   render() {
-    // console.log("MY STATE", this.state);
-    // console.log(productOb  j.value);
     const {
       produits,
       qu_est_ce_que_j_en_fais,
@@ -132,8 +129,6 @@ class AddProduct extends Component {
       images,
       typologie_des_dechets
     } = this.state.field;
-
-    const { currentUser } = this.props;
 
     return (
       <section className="add-product">

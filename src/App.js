@@ -20,7 +20,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // const { currentUser } = props;
     this.state = {
       currentUser: null,
       isLoginChecked: false,
@@ -28,12 +27,11 @@ class App extends Component {
       facts: ""
     };
   }
-  // checks to see if there is a logged in user when the page is loaded
+
   componentDidMount() {
     api
       .get("/checklogin")
       .then(res => {
-        console.log("check login", res.data);
         this.updateUser(res.data.userDoc);
       })
       .catch(err => {
@@ -60,7 +58,6 @@ class App extends Component {
         this.updateUser(null);
       })
       .catch(err => {
-        console.log(err);
         alert("something went wrong");
       });
   }
@@ -86,8 +83,8 @@ class App extends Component {
           </style>
         </React.Fragment>
 
-        <body className="site">
-          <header class="header">
+        <section className="site">
+          <header className="header">
             <NavLink exact to="/" className="app-title">
               Recyclez-moi
             </NavLink>
@@ -203,6 +200,7 @@ class App extends Component {
               Made by{" "}
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/manonsalaun/"
               >
                 Manon
@@ -210,17 +208,22 @@ class App extends Component {
               ,{" "}
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/julie-m%C3%A9nard/"
               >
                 Julie
               </a>{" "}
               and{" "}
-              <a target="_blank" href="https://www.linkedin.com/in/abisummers/">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/abisummers/"
+              >
                 Abi
               </a>
             </p>
           </footer>
-        </body>
+        </section>
       </div>
     );
   }

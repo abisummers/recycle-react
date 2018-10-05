@@ -1,11 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 function AnswerOption(props) {
-
   return (
-
-    <li className={props.isAnswered && (props.answer == props.answerType) && (props.answerType? "answerOption success": "answerOption failure") }>
+    <li
+      className={
+        props.isAnswered &&
+        props.answer === props.answerType &&
+        (props.answerType ? "answerOption success" : "answerOption failure")
+      }
+    >
       <input
         type="radio"
         className="radioCustomButton"
@@ -21,7 +25,6 @@ function AnswerOption(props) {
       </label>
     </li>
   );
-
 }
 
 AnswerOption.propTypes = {
