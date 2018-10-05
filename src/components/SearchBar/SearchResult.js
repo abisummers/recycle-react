@@ -54,7 +54,7 @@ class SearchResult extends React.Component {
                         <p>
                           <b>Type:</b> {oneProduct.fields.typologie_des_dechets}
                         </p>
-                        <p>
+                        <p className="cadre-vert">
                           <b>Qu'est-ce que j'en fais ? :</b>{" "}
                           {oneProduct.fields.qu_est_ce_que_j_en_fais}
                         </p>
