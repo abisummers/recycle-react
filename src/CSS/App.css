@@ -475,9 +475,7 @@ li {
   display: flex;
 }
 
-.close-popup {
-  margin: 0 40%;
-}
+
 
 .image-product {
   width: 40px;
@@ -544,7 +542,7 @@ border: 2px solid rgb(133, 189, 133);
 .product-info {
   /* border: 2px solid green; */
   width: 750px;
-  margin-left: 35px;
+  /* margin-left: 35px; */
 }
 .product-title {
   margin: 0 auto;
