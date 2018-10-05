@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import NotFound from "../NotFound";
 import api from "../../api.js";
+import CategoryList from "./CategoryList.js";
+import CategoryPopup from "./CategoryPopup.js";
 
 const categories = [
   { label: "Bois", id: "bois" },
@@ -20,27 +22,7 @@ const categories = [
   { label: "Verre", id: "verre" }
 ];
 
-class Popup extends React.Component {
-  render() {
 
-    return (
-      <div className="popup">
-        <div className="popup_inner">
-          <p className="popup-p">{this.props.text2}</p>
-          <p className="popup-p">{this.props.text3}</p>
-          <p className="popup-p">{this.props.text4}</p>
-          <p className="popup-p">{this.props.text5}</p>
-          <p className="popup-p">{this.props.text6}</p>
-          <p className="popup-p">{this.props.text7}</p>
-
-          <button onClick={this.props.closePopup} className="close-popup">
-            Fermer
-          </button>
-        </div>
-      </div>
-    );
-  }
-}
 
 class IndividualCategory extends Component {
   constructor(props) {
@@ -48,17 +30,27 @@ class IndividualCategory extends Component {
 
     this.state = {
       productCategory: [],
-      showPopup: false
+      showPopup: false,
+      selectedCat: {}
     };
   }
-  togglePopup(index) {
-    const { productCategory } = this.state;
-    let productCategoryCopy = [...productCategory];
-    productCategoryCopy[index].showPopup = !productCategoryCopy[index].showPopup
+
+  handleClick(index) {
+    console.log("coucou handleClick")
     this.setState({
-      productCategory: productCategoryCopy
-    });
+      selectedCat: this.state.productCategory[index]
+    })
   }
+
+  // togglePopup(index) {
+  //   const { productCategory } = this.state;
+  //   let productCategoryCopy = [...productCategory];
+  //   productCategoryCopy[index].showPopup = !productCategoryCopy[index]
+  //     .showPopup;
+  //   this.setState({
+  //     productCategory: productCategoryCopy
+  //   });
+  // }
 
   componentDidMount() {
     const { id } = this.props.match.params;
@@ -87,44 +79,26 @@ class IndividualCategory extends Component {
 
   render() {
     const { productCategory } = this.state;
+    console.log("selectedCat", this.state.selectedCat)
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );
     return (
       <section>
-        <h2 className="oneCategory-name">{category.label}</h2>
+          <h2 className="oneCategory-name">{category.label}</h2>
 
-        <ul>
-          {productCategory.map((oneCategory, index) => (
+        
+        <div className="indiv-container">
+          <CategoryList productCategory={productCategory} onClick={(index)=>{this.handleClick(index)}}  />
+          <CategoryPopup catToShow={this.state.selectedCat} className="cat-popup"/>
+        </div>
 
-            <button
-              onClick={() => this.togglePopup(index)}
-              className="popup-button"
-            >
-              <li key={oneCategory._id} className="product-list">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png" className="image-product"/>
-              <p className="">{oneCategory.fields.produits}</p>
-              </li>
-              {oneCategory.showPopup && (
-                <Popup
-                  text2="Type:"
-                  text3={oneCategory.fields.typologie_des_dechets}
-                  text4="Qu'est-ce que j'en fais ? :"
-                  text5={oneCategory.fields.qu_est_ce_que_j_en_fais}
-                  text6="Que va-t-il devenir ? :"
-                  text7={oneCategory.fields.que_va_t_il_devenir}
-                  closePopup={() => this.togglePopup}
-                />
-                
-              )}
-            </button>
-          ))}
-        </ul>
+
+
       </section>
+
     );
   }
 }
 
 export default IndividualCategory;
-
-
