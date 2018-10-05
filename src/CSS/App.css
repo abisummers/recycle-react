@@ -76,12 +76,9 @@ footer {
 
 footer a {
   text-decoration: none;
-  color:white;
+  color: white;
   font-weight: bold;
-
 }
-
-
 
 /* -----------------LOGIN/SIGNUP FORMS -------------- */
 
@@ -275,7 +272,6 @@ li {
 
 .row {
   display: table;
-  width: 80%;
   display: flex;
   justify-content: space-around;
   margin: auto;
