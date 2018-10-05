@@ -6,6 +6,10 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+.site{
+  font-family: "Barlow Semi Condensed", sans-serif;
+
+}
 
 .header {
   background-color: rgb(133, 189, 133);
