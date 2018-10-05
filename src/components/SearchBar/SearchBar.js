@@ -1,6 +1,6 @@
 import React from "react";
-import { withRouter, Redirect } from "react-router-dom";
-
+import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
 
   render() {
     if (this.state.isSubmitSuccess === true) {
-      return <Redirect to={"/search-result"} />
+      return <Redirect to={"/search-result"} />;
     }
 
     return (
@@ -50,5 +50,3 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
-
-// export default withRouter(SearchBar);

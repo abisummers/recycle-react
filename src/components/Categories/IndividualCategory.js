@@ -23,7 +23,6 @@ const categories = [
 ];
 
 
-
 class IndividualCategory extends Component {
   constructor(props) {
     super(props);
@@ -58,7 +57,6 @@ class IndividualCategory extends Component {
     api
       .get(`/material/${id}`)
       .then(response => {
-        // console.log("all items", response.data);
         response.data.sort((a, b) => {
           const aLower = a.fields.produits.toLowerCase();
           const bLower = b.fields.produits.toLowerCase();

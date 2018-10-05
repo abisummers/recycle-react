@@ -20,7 +20,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    const { currentUser } = props;
     this.state = {
       currentUser: null,
       isLoginChecked: false,
@@ -28,12 +27,11 @@ class App extends Component {
       facts: ""
     };
   }
-  // checks to see if there is a logged in user when the page is loaded
+
   componentDidMount() {
     api
       .get("/checklogin")
       .then(res => {
-        console.log("check login", res.data);
         this.updateUser(res.data.userDoc);
       })
       .catch(err => {
@@ -60,7 +58,6 @@ class App extends Component {
         this.updateUser(null);
       })
       .catch(err => {
-        console.log(err);
         alert("something went wrong");
       });
   }
@@ -86,105 +83,147 @@ class App extends Component {
           </style>
         </React.Fragment>
 
-        <header>
-          <NavLink exact to="/" className="app-title">
-            Recyclez-moi
-          </NavLink>
-
-          <NavLink exact to="/" className="nav-link">
-            Accueil
-          </NavLink>
-
-          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
-          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
-
-          {currentUser && (
-            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
-              Déconnection
+        <section className="site">
+          <header className="header">
+            <NavLink exact to="/" className="app-title">
+              Recyclez-moi
             </NavLink>
-          )}
 
+            <div className="nav-bar">
+              <NavLink exact to="/quizz" className="nav-link">
+                QUIZ
+              </NavLink>
 
-         
-        </header>
+              {!currentUser && (
+                <NavLink className="nav-link" to="/signup">
+                  Inscription
+                </NavLink>
+              )}
+              {!currentUser && (
+                <NavLink className="nav-link" to="/login">
+                  Connection
+                </NavLink>
+              )}
 
-        <section className="search-form">
-          <SearchBar handleEvent={event => this.handleEvent(event)} />
+              {currentUser && (
+                <NavLink
+                  className="nav-link"
+                  to="/"
+                  onClick={() => this.logOutClick()}
+                >
+                  Déconnection
+                </NavLink>
+              )}
+            </div>
+          </header>
+
+          <section className="site-content">
+            <section className="search-form">
+              <SearchBar handleEvent={event => this.handleEvent(event)} />
+            </section>
+
+            <Switch>
+              <Route
+                path="/quizz"
+                render={() => (
+                  <Grandquizz inputValue={this.state.quizQuestions} />
+                )}
+              />
+
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <HomePage
+                    currentUser={currentUser}
+                    handleEvent={event => this.handleEvent(event)}
+                  />
+                )}
+              />
+              <Route
+                path="/facts"
+                render={() => <FunFact facts={this.state.facts} />}
+              />
+
+              <Route path="/category-result" component={CategoryResult} />
+              <Route
+                path="/search-result"
+                render={() => (
+                  <SearchResult inputValue={this.state.inputValue} />
+                )}
+              />
+
+              <Route path="/all-categories" component={AllCategories} />
+
+              {/* link to caterogy page eg glass or plastic */}
+              <Route path="/material/:id" component={IndividualCategory} />
+              <Route
+                path="/signup"
+                render={() => (
+                  <SignUp
+                    // currentUser={currentUser}
+                    onSignUp={userDoc => this.updateUser(userDoc)}
+                  />
+                )}
+              />
+              <Route
+                path="/login"
+                render={() => (
+                  <Login
+                    currentUser={currentUser}
+                    onLogin={userDoc => this.updateUser(userDoc)}
+                  />
+                )}
+              />
+
+              <Route
+                path="/add"
+                render={() =>
+                  !isLoginChecked ? (
+                    <p>Loading...</p>
+                  ) : !currentUser ? (
+                    <Redirect to="/login" />
+                  ) : (
+                    <AddProduct
+                      currentUser={currentUser}
+                      addedProduct={userDoc => this.updateUser(userDoc)}
+                    />
+                  )
+                }
+              />
+
+              <Route component={NotFound} />
+            </Switch>
+          </section>
+          <footer>
+            <p>
+              Made by{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/manonsalaun/"
+              >
+                Manon
+              </a>
+              ,{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/julie-m%C3%A9nard/"
+              >
+                Julie
+              </a>{" "}
+              and{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/abisummers/"
+              >
+                Abi
+              </a>
+            </p>
+          </footer>
         </section>
-
-        <Switch>
-          <Route
-            path="/quizz"
-            render={() => <Grandquizz inputValue={this.state.quizQuestions} />}
-          />
-
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <HomePage
-                currentUser={currentUser}
-                handleEvent={event => this.handleEvent(event)}
-              />
-            )}
-          />
-          <Route
-            path="/facts"
-            render={() => <FunFact facts={this.state.facts} />}
-          />
-
-          <Route path="/category-result" component={CategoryResult} />
-          <Route
-            path="/search-result"
-            render={() => <SearchResult inputValue={this.state.inputValue} />}
-          />
-
-          <Route path="/all-categories" component={AllCategories} />
-
-          {/* link to caterogy page eg glass or plastic */}
-          <Route path="/material/:id" component={IndividualCategory} />
-          <Route
-            path="/signup"
-            render={() => (
-              <SignUp
-                // currentUser={currentUser}
-                onSignUp={userDoc => this.updateUser(userDoc)}
-              />
-            )}
-          />
-          <Route
-            path="/login"
-            render={() => (
-              <Login
-                currentUser={currentUser}
-                onLogin={userDoc => this.updateUser(userDoc)}
-              />
-            )}
-          />
-
-          <Route
-            path="/add"
-            render={() =>
-              !isLoginChecked ? (
-                <p>Loading...</p>
-              ) : !currentUser ? (
-                <Redirect to="/login" />
-              ) : (
-                <AddProduct
-                  currentUser={currentUser}
-                  addedProduct={userDoc => this.updateUser(userDoc)}
-                />
-              )
-            }
-          />
-
-          <Route component={NotFound} />
-        </Switch>
-
-        <footer>
-          <p>Made by <a target="_blank" href="https://www.linkedin.com/in/manonsalaun/">Manon</a>, <a target="_blank" href="https://www.linkedin.com/in/julie-m%C3%A9nard/">Julie</a> and <a target="_blank" href="https://www.linkedin.com/in/abisummers/">Abi</a></p>
-
-        </footer>
       </div>
     );
   }
