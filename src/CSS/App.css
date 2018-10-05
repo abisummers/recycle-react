@@ -307,7 +307,9 @@ li {
 }
 
 .row > a:hover {
-  border: 3px solid rgb(133, 189, 133);
+  border: 5px solid rgb(133, 189, 133);
+  color: white;
+  text-decoration: none;
 }
 
 /* --------------CATEGORIES ------------------ */
