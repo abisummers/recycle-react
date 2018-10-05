@@ -182,7 +182,8 @@ class App extends Component {
         </Switch>
 
         <footer>
-          <p>Made by Manon, Julie and Abi</p>
+          <p>Made by <a target="_blank" href="https://www.linkedin.com/in/manonsalaun/">Manon</a>, <a target="_blank" href="https://www.linkedin.com/in/julie-m%C3%A9nard/">Julie</a> and <a target="_blank" href="https://www.linkedin.com/in/abisummers/">Abi</a></p>
+
         </footer>
       </div>
     );
