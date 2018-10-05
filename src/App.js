@@ -8,6 +8,7 @@ import SignUp from "./components/User/SignUp";
 import Login from "./components/User/LogIn";
 import IndividualCategory from "./components/Categories/IndividualCategory";
 import AllCategories from "./components/Categories/AllCategories";
+import "./CSS/quizz.css";
 import "./CSS/App.css";
 import "./index.css";
 import api from "./api";
@@ -15,6 +16,7 @@ import FunFact from "./components/FunFact";
 import AddProduct from "./components/AddProduct";
 import Grandquizz from "./components/Quizz/Grandquizz";
 import SearchBar from "./components/SearchBar/SearchBar";
+
 
 class App extends Component {
   constructor(props) {

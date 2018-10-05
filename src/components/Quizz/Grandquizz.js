@@ -69,7 +69,7 @@ class Grandquizz extends Component {
             this.setState({ isAnswered: true });
 
             if (this.state.questionId < this.state.questionsArray.length) {
-                setTimeout(() => this.setNextQuestion(), 3000);
+                setTimeout(() => this.setNextQuestion(), 1000);
                 //this.setNextQuestion()
             } else {
                 setTimeout(() => this.setResults(this.state.answersCount), 300);

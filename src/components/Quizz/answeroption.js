@@ -6,7 +6,7 @@ function AnswerOption(props) {
     <li
       className={
         props.isAnswered &&
-        props.answer === props.answerType &&
+        props.answer == props.answerType &&
         (props.answerType ? "answerOption success" : "answerOption failure")
       }
     >

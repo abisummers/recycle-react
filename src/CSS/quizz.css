@@ -45,9 +45,6 @@ body {
 }
  
 /* AnswerOption Component */
-.answerOption {
-  border-top: 1px solid #eee;
-}
  
 .answerOption:hover {
   background-color: #eefbfe;
@@ -136,7 +133,7 @@ body {
 .failure {
     border : 3px solid red;
 }
-
+/* 
 .results {
     margin-bottom : 4px;
-}
+} */
