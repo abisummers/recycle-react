@@ -102,7 +102,7 @@ class IndividualCategory extends Component {
               className="popup-button"
             >
               <li key={oneCategory._id} className="product-list">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png" className="image-product"/>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png" className="image-product" alt=""/>
               <p>{oneCategory.fields.produits}</p>
               </li>
               {oneCategory.showPopup && (

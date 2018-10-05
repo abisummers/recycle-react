@@ -20,6 +20,7 @@ function Quiz(props) {
         answerPoint={key.point}
         questionId={props.questionId}
         onAnswerSelected={props.onAnswerSelected}
+        isAnswered={props.isAnswered}
       />
     );
   }

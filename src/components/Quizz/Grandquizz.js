@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import update from 'react-addons-update';
 import api from "../../api.js";
 import Quiz from './quizz.js';
 import Result from './result.js';
@@ -17,7 +16,8 @@ class Grandquizz extends Component {
             answerOptions: [],
             answer: '',
             answersCount: 0,
-            result: ''
+            result: '',
+            isAnswered: false,
         };
 
         this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -64,9 +64,10 @@ class Grandquizz extends Component {
     handleAnswerSelected(event) {
        // console.log("handleAnswerSelected event", event.currentTarget.value)
         this.setUserAnswer(event.currentTarget.value);
+        this.setState({isAnswered:true})
 
         if (this.state.questionId < this.state.questionsArray.length) {
-           setTimeout(() => this.setNextQuestion(), 300);
+           setTimeout(() => this.setNextQuestion(), 3000);
              //this.setNextQuestion()
         } else {
             setTimeout(() => this.setResults(this.state.answersCount), 300);
@@ -76,7 +77,6 @@ class Grandquizz extends Component {
     setUserAnswer(answer) {
         console.log(this.state.answersCount)
         const updatedAnswersCount = parseInt(this.state.answersCount) + parseInt(answer);
-
         this.setState({
             answersCount: updatedAnswersCount,
             answer: answer
@@ -92,7 +92,8 @@ class Grandquizz extends Component {
             questionId: questionId,
             question: this.state.questionsArray[counter].question,
             answerOptions: this.state.questionsArray[counter].answers,
-            answer: ''
+            answer: '',
+            isAnswered: false,
         });
     }
 
@@ -107,9 +108,9 @@ class Grandquizz extends Component {
 
     setResults(result) {
         if (result >= 8) {
-            this.setState({ result: "Vous avez gagné"});
+            this.setState({ result: "Vous avez gagné ! 🎉🎉 "});
         } else {
-            this.setState({ result: 'Vous avez perdu' });
+            this.setState({ result: 'Vous avez perdu 🗑️💔 ! Révisez vos bases avec les réponses ci-dessous: ' });
         }
     }
 
@@ -122,6 +123,7 @@ class Grandquizz extends Component {
                 question={this.state.question}
                 questionTotal={this.state.questionsArray.length}
                 onAnswerSelected={this.handleAnswerSelected}
+                isAnswered={this.state.isAnswered}
             />
         );
     }
@@ -141,6 +143,7 @@ class Grandquizz extends Component {
            */}
                 </div>
                 {this.state.result ? this.renderResult() : this.renderQuiz()}
+
             </div>
         );
 

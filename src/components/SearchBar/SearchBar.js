@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 class SearchBar extends React.Component {

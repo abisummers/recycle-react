@@ -128,3 +128,11 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
+
+.success {
+    border : 3px solid green;
+}
+
+.failure {
+    border : 3px solid red;
+}

@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    const { currentUser } = props;
+    // const { currentUser } = props;
     this.state = {
       currentUser: null,
       isLoginChecked: false,
