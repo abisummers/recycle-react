@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import api from "../../api.js";
 
 class CategoryResult extends React.Component {
@@ -27,8 +26,9 @@ class CategoryResult extends React.Component {
       });
   }
 
+
   render() {
-    const {  createdAt } = this.state;
+    const { createdAt } = this.state;
     const {
       qu_est_ce_que_j_en_fais,
       comment_eviter_de_le_produire,
@@ -37,6 +37,7 @@ class CategoryResult extends React.Component {
       images,
       typologie_des_dechets
     } = this.state.fields;
+  
     return (
       <section>
         <img src={images} alt="product" />
@@ -47,7 +48,7 @@ class CategoryResult extends React.Component {
         <p>{que_va_t_il_devenir}</p>
         <h3>How to avoid using it?</h3>
         <p>{comment_eviter_de_le_produire}</p>
-        <p>Category: {typologie_des_dechets}</p>
+        <p>Category:   Popup.plugins().popover({typologie_des_dechets})</p>
         <p>Added on {createdAt}</p>
       </section>
     );

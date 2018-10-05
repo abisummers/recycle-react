@@ -14,7 +14,7 @@ class SearchResult extends React.Component {
     api
       .get("/search-result")
       .then(response => {
-        console.log("List of products!!!!!", response.data);
+        console.log("List of products :", response.data);
         this.setState({ productsArray: response.data });
       })
       .catch(err => {
@@ -25,7 +25,6 @@ class SearchResult extends React.Component {
 
   render() {
     const { productsArray } = this.state;
-    console.log("coucou", this.props);
     return (
       <div>
         <section className="elements">
@@ -82,3 +81,5 @@ class SearchResult extends React.Component {
 }
 
 export default SearchResult;
+
+

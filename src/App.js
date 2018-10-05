@@ -13,6 +13,7 @@ import "./index.css";
 import api from "./api";
 import FunFact from "./components/FunFact";
 import AddProduct from "./components/AddProduct";
+import Grandquizz from "./components/Quizz/Grandquizz";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
@@ -86,22 +87,25 @@ class App extends Component {
         </React.Fragment>
 
         <header>
-          <div className="app-title">
-            <NavLink exact to="/">
-              Recyclez-moi
+          <NavLink exact to="/" className="app-title">
+            Recyclez-moi
+          </NavLink>
+
+          <NavLink exact to="/" className="nav-link">
+            Accueil
+          </NavLink>
+
+          {!currentUser && <NavLink to="/signup" className="nav-link">Inscription</NavLink>}
+          {!currentUser && <NavLink to="/login" className="nav-link">Connection</NavLink>}
+
+          {currentUser && (
+            <NavLink to="/" onClick={() => this.logOutClick()} className="nav-link">
+              Déconnection
             </NavLink>
-          </div>
+          )}
 
-          <div className="nav-link">
-            {!currentUser && <NavLink to="/signup">Inscription</NavLink>}
-            {!currentUser && <NavLink to="/login">Connection</NavLink>}
 
-            {currentUser && (
-              <NavLink to="/" onClick={() => this.logOutClick()}>
-                Déconnexion
-              </NavLink>
-            )}
-          </div>
+         
         </header>
 
         <section className="search-form">
@@ -109,6 +113,11 @@ class App extends Component {
         </section>
 
         <Switch>
+          <Route
+            path="/quizz"
+            render={() => <Grandquizz inputValue={this.state.quizQuestions} />}
+          />
+
           <Route
             exact
             path="/"

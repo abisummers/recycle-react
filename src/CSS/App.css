@@ -466,3 +466,7 @@ li {
 .product-title {
   margin: 0 auto;
 }
+
+popover {
+  border : 1px, black, solid;
+}

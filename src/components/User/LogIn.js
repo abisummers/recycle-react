@@ -7,8 +7,24 @@ class Login extends Component {
     super(props);
     this.state = {
       email: "",
-      originalPassword: ""
+      originalPassword: "",
+      showModal: false,
+      loading: false,
+      error: null
     };
+  }
+
+  openModal() {
+    this.setState({
+      showModal: true
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false,
+      error: null
+    });
   }
 
   handleSubmit(event) {
@@ -47,6 +63,10 @@ class Login extends Component {
           <h2>Login</h2>
           <form onSubmit={event => this.handleSubmit(event)}>
             <label>
+              visible=
+              {this.state.showModal}
+              onCloseModal=
+              {this.closeModal.bind(this)}
               Email:
               <input
                 type="email"

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import api from "../../api";
 
 const categories = [
@@ -20,6 +19,8 @@ const categories = [
   { label: "Textiles et cuir", id: "textiles-et-cuir" },
   { label: "Verre", id: "verre" }
 ];
+
+
 class AllCategories extends Component {
   constructor(props) {
     super(props);
@@ -43,15 +44,13 @@ class AllCategories extends Component {
 
   render() {
     const { productCategory } = this.state;
-    console.log(productCategory);
+    console.log(productCategory)
 
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );
-
-    console.log(category);
-
-    console.log(this.state);
+    console.log(category)
+    
     return (
       <section>
         <h2>All Categories </h2>
