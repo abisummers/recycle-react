@@ -455,7 +455,7 @@ li {
 }
 .catList{
   /* border:2px solid blueviolet; */
-  height: 50vh;
+  height: 70vh;
   overflow: scroll;
   width: 50vw;
 }
@@ -475,9 +475,7 @@ li {
   display: flex;
 }
 
-.close-popup {
-  margin: 0 40%;
-}
+
 
 .image-product {
   width: 40px;
@@ -538,13 +536,13 @@ border: 2px solid rgb(133, 189, 133);
 }
 
 .product-image {
-  width: 175px;
+  width: 100px;
   margin-right: 5px;
 }
 .product-info {
   /* border: 2px solid green; */
   width: 750px;
-  margin-left: 35px;
+  /* margin-left: 35px; */
 }
 .product-title {
   margin: 0 auto;
