@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../../api";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class SignUp extends Component {
   constructor(props) {
@@ -45,6 +45,10 @@ class SignUp extends Component {
 
   render() {
     const { fullName, email, originalPassword } = this.state;
+
+    if (this.props.currentUser) {
+      return <Redirect to="/" />;
+    }
 
     return (
       <section className="loginPage">

@@ -162,7 +162,7 @@ class App extends Component {
                 path="/signup"
                 render={() => (
                   <SignUp
-                    // currentUser={currentUser}
+                    currentUser={currentUser}
                     onSignUp={userDoc => this.updateUser(userDoc)}
                   />
                 )}
