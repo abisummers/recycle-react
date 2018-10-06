@@ -182,7 +182,9 @@ class App extends Component {
                 path="/add"
                 render={() =>
                   !isLoginChecked ? (
-                    <p>Loading...</p>
+                    <div className="error-message">
+                      <p>Loading...</p>
+                    </div>
                   ) : !currentUser ? (
                     <Redirect
                       to={{
