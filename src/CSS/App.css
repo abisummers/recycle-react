@@ -6,9 +6,8 @@ body {
   flex-direction: column;
   height: 100vh;
 }
-.site{
+.site {
   font-family: "Barlow Semi Condensed", sans-serif;
-
 }
 
 .header {
@@ -210,6 +209,16 @@ form > input {
 .add-product button:hover {
   background-color: rgb(133, 189, 133);
   color: white;
+}
+
+.addproduct {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.addproduct a {
+  color: rgb(133, 189, 133);
 }
 /* --------------FUN FACTS ------------------ */
 
@@ -445,15 +454,14 @@ li {
 /* ----------------ONE CATEGORY LIST -------------- */
 .popup {
   /* border: 2px yellow solid; */
-  width:30vw;
-  
+  width: 30vw;
 }
-.indiv-container{
+.indiv-container {
   /* border:2px solid green; */
   display: flex;
   justify-content: space-around;
 }
-.catList{
+.catList {
   /* border:2px solid blueviolet; */
   height: 70vh;
   overflow: scroll;
@@ -475,14 +483,12 @@ li {
   display: flex;
 }
 
-
-
 .image-product {
   width: 40px;
   height: 40px;
 }
-.cadre-vert{
-border: 2px solid rgb(133, 189, 133);
+.cadre-vert {
+  border: 2px solid rgb(133, 189, 133);
 }
 
 /* ----------------ALL CATEGORIES -------------- */

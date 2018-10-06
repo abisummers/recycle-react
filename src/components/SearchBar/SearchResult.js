@@ -1,5 +1,6 @@
 import React from "react";
 import api from "../../api.js";
+import { Link } from "react-router-dom";
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -29,6 +30,10 @@ class SearchResult extends React.Component {
       <div>
         <section className="elements">
           <h1>Your result for {this.props.inputValue} </h1>
+
+          <div className="addproduct">
+            <Link to="/add">Ajouter un produit</Link>
+          </div>
           <ul>
             {productsArray.map((oneProduct, index) => {
               return (
@@ -40,8 +45,6 @@ class SearchResult extends React.Component {
                     .includes(this.props.inputValue.toLowerCase())) && (
                   <section className="SearchResult-container">
                     <li key={index} className="product-container">
-                    
-
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Recycling_symbol2.svg/1200px-Recycling_symbol2.svg.png"
                         className="product-image"
@@ -83,5 +86,3 @@ class SearchResult extends React.Component {
 }
 
 export default SearchResult;
-
-

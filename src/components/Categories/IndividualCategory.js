@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import api from "../../api.js";
 import CategoryList from "./CategoryList.js";
 import CategoryPopup from "./CategoryPopup.js";
+import { Link } from "react-router-dom";
 
 const categories = [
   { label: "Bois", id: "bois" },
@@ -22,7 +23,6 @@ const categories = [
   { label: "Verre", id: "verre" }
 ];
 
-
 class IndividualCategory extends Component {
   constructor(props) {
     super(props);
@@ -35,10 +35,10 @@ class IndividualCategory extends Component {
   }
 
   handleClick(index) {
-    console.log("coucou handleClick")
+    console.log("coucou handleClick");
     this.setState({
       selectedCat: this.state.productCategory[index]
-    })
+    });
   }
 
   // togglePopup(index) {
@@ -77,24 +77,31 @@ class IndividualCategory extends Component {
 
   render() {
     const { productCategory } = this.state;
-    console.log("selectedCat", this.state.selectedCat)
+    console.log("selectedCat", this.state.selectedCat);
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );
     return (
       <section>
-          <h2 className="oneCategory-name">{category.label}</h2>
+        <h2 className="oneCategory-name">{category.label}</h2>
 
-        
-        <div className="indiv-container">
-          <CategoryList productCategory={productCategory} onClick={(index)=>{this.handleClick(index)}}  />
-          <CategoryPopup catToShow={this.state.selectedCat} className="cat-popup"/>
+        <div className="addproduct">
+          <Link to="/add">Ajouter un produit</Link>
         </div>
 
-
-
+        <div className="indiv-container">
+          <CategoryList
+            productCategory={productCategory}
+            onClick={index => {
+              this.handleClick(index);
+            }}
+          />
+          <CategoryPopup
+            catToShow={this.state.selectedCat}
+            className="cat-popup"
+          />
+        </div>
       </section>
-
     );
   }
 }
