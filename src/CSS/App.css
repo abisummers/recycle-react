@@ -68,6 +68,14 @@ h2 {
   text-transform: uppercase;
 }
 
+/* ---------------- ERROR MESSAGE ---------- */
+
+.error-message {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
 /* ---------------CLEAR FIX ------------ */
 
 .clearfix:after {

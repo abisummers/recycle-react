@@ -59,6 +59,10 @@ class Login extends Component {
 
     return (
       <section className="login-container">
+        <div className="error-message">
+          <p>{this.props.message}</p>
+        </div>
+
         <div className="log-sign-form">
           <h2>Login</h2>
           <form onSubmit={event => this.handleSubmit(event)}>

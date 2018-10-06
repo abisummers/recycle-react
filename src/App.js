@@ -17,7 +17,6 @@ import AddProduct from "./components/AddProduct";
 import Grandquizz from "./components/Quizz/Grandquizz";
 import SearchBar from "./components/SearchBar/SearchBar";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -170,8 +169,9 @@ class App extends Component {
               />
               <Route
                 path="/login"
-                render={() => (
+                render={({ location: { state: { message } = {} } }) => (
                   <Login
+                    message={message}
                     currentUser={currentUser}
                     onLogin={userDoc => this.updateUser(userDoc)}
                   />
@@ -184,7 +184,14 @@ class App extends Component {
                   !isLoginChecked ? (
                     <p>Loading...</p>
                   ) : !currentUser ? (
-                    <Redirect to="/login" />
+                    <Redirect
+                      to={{
+                        pathname: "/login",
+                        state: {
+                          message: "Vous devez être enregistré pour ajouter"
+                        }
+                      }}
+                    />
                   ) : (
                     <AddProduct
                       currentUser={currentUser}
