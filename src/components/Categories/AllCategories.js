@@ -48,6 +48,8 @@ class AllCategories extends Component {
     //   ({ id }) => id === this.props.match.params.id
     // );
 
+    console.log("hi!");
+
     return (
       <section>
         <h2>Toutes les Categories</h2>
