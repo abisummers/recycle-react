@@ -520,11 +520,14 @@ li {
   height: 150px;
   float: left;
   font-weight: bold;
-  /* -webkit-text-stroke: 2px; */
-  /* -webkit-text-stroke-color: black; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.allCategories a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .allCategories li {
@@ -532,7 +535,7 @@ li {
 }
 
 .allCategories li > a:hover {
-  border: 2px solid rgb(133, 189, 133);
+  border: 5px solid rgb(133, 189, 133);
 }
 
 /* ------------------- SEARCH RESULT ---------------- */
