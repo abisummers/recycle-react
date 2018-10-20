@@ -42,15 +42,15 @@ class AllCategories extends Component {
   }
 
   render() {
-    const { productCategory } = this.state;
+    // const { productCategory } = this.state;
 
-    const category = categories.find(
-      ({ id }) => id === this.props.match.params.id
-    );
+    // const category = categories.find(
+    //   ({ id }) => id === this.props.match.params.id
+    // );
 
     return (
       <section>
-        <h2>All Categories </h2>
+        <h2>Toutes les Categories</h2>
 
         <ul className="allCategories clearfix">
           {categories.map(oneCategory => (

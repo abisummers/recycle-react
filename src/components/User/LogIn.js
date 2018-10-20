@@ -64,10 +64,10 @@ class Login extends Component {
         </div>
 
         <div className="log-sign-form">
-          <h2>Login</h2>
+          <h2>Connexion</h2>
           <form onSubmit={event => this.handleSubmit(event)}>
             <label>
-              Email:
+              Adresse e-mail:
               <input
                 type="email"
                 name="email"
@@ -78,7 +78,7 @@ class Login extends Component {
             </label>
 
             <label>
-              Password:
+              Mot de passe:
               <input
                 type="password"
                 name="originalPassword"
@@ -88,8 +88,8 @@ class Login extends Component {
               />
             </label>
 
-            <button>Login</button>
-            <Link to="signup">Or sign up</Link>
+            <button>Connexion</button>
+            <Link to="signup">Ou inscription</Link>
           </form>
         </div>
       </section>

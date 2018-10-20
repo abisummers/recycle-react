@@ -14,7 +14,6 @@ class SignUp extends Component {
 
   signup(event) {
     const { value, name } = event.target;
-    console.log(value);
 
     this.setState({
       [name]: value
@@ -23,16 +22,14 @@ class SignUp extends Component {
 
   submitSignupForm(event) {
     event.preventDefault();
-    console.log(this.state);
+
     api
       .post("/signup", this.state)
       .then(res => {
-        console.log("sign up", res.data);
         const { onSignUp } = this.props;
         onSignUp(res.data.userDoc);
       })
       .catch(err => {
-        console.log(err);
         alert("there was a mistake");
       });
 
@@ -53,28 +50,27 @@ class SignUp extends Component {
     return (
       <section className="loginPage">
         <div className="about">
-          <h3>About Us</h3>
+          <h3>Pourqoui?</h3>
           <p>
-            By joining our site, you're able to add products to help others
-            recycle.
+            En rejoignant notre site Web, vous pouvez aider les autres recycler.
           </p>
         </div>
         <div className="log-sign-form">
-          <h2>Sign Up</h2>
+          <h2>Inscription</h2>
           <form onSubmit={event => this.submitSignupForm(event)}>
             <label>
-              Full Name:
+              Nom:
               <input
                 onChange={event => this.signup(event)}
                 name="fullName"
                 value={fullName}
                 type="text"
-                placeholder="Enter your name"
+                placeholder="Nom"
               />
             </label>
 
             <label>
-              Email:
+              Adresse e-mail:
               <input
                 onChange={event => this.signup(event)}
                 name="email"
@@ -85,17 +81,17 @@ class SignUp extends Component {
             </label>
 
             <label>
-              Password:
+              Mot de passe:
               <input
                 onChange={event => this.signup(event)}
                 name="originalPassword"
                 value={originalPassword}
                 type="password"
-                placeholder="it's a secret"
+                placeholder="mot de passe"
               />
             </label>
-            <button>Sign Up</button>
-            <Link to="/login">Or login</Link>
+            <button>Inscription</button>
+            <Link to="/login">Ou connexion</Link>
           </form>
         </div>
       </section>
