@@ -112,6 +112,11 @@ footer a {
   font-weight: bold;
 }
 
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 /* -----------------LOGIN/SIGNUP FORMS -------------- */
 
 .log-sign-form {
