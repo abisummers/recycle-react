@@ -11,7 +11,6 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log("SearchBar props", this.props)
     event.preventDefault();
     const { handleEvent, history } = this.props;
     handleEvent(this.state.inputValue);

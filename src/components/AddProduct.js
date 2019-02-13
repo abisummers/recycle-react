@@ -73,7 +73,6 @@ class AddProduct extends Component {
 
   imageUpload(event) {
     const { files } = event.target;
-    console.log("file selected", files[0]);
 
     if (!files[0]) {
       return;
@@ -88,7 +87,6 @@ class AddProduct extends Component {
       .post("/upload-image", uploadData)
 
       .then(res => {
-        console.log("file uploaded", res.data);
         const { imageUrl } = res.data;
         const stateCopy = this.state.field;
         stateCopy.images = imageUrl;

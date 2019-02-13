@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import NotFound from "../NotFound";
 import api from "../../api.js";
 import CategoryList from "./CategoryList.js";
 import CategoryPopup from "./CategoryPopup.js";
@@ -35,21 +34,10 @@ class IndividualCategory extends Component {
   }
 
   handleClick(index) {
-    console.log("coucou handleClick");
     this.setState({
       selectedCat: this.state.productCategory[index]
     });
   }
-
-  // togglePopup(index) {
-  //   const { productCategory } = this.state;
-  //   let productCategoryCopy = [...productCategory];
-  //   productCategoryCopy[index].showPopup = !productCategoryCopy[index]
-  //     .showPopup;
-  //   this.setState({
-  //     productCategory: productCategoryCopy
-  //   });
-  // }
 
   componentDidMount() {
     const { id } = this.props.match.params;
@@ -77,7 +65,6 @@ class IndividualCategory extends Component {
 
   render() {
     const { productCategory } = this.state;
-    console.log("selectedCat", this.state.selectedCat);
     const category = categories.find(
       ({ id }) => id === this.props.match.params.id
     );

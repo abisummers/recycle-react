@@ -42,12 +42,6 @@ class AllCategories extends Component {
   }
 
   render() {
-    // const { productCategory } = this.state;
-
-    // const category = categories.find(
-    //   ({ id }) => id === this.props.match.params.id
-    // );
-
     return (
       <section>
         <h2>Toutes les Categories</h2>

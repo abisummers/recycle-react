@@ -15,7 +15,6 @@ class SearchResult extends React.Component {
     api
       .get("/search-result")
       .then(response => {
-        console.log("List of products :", response.data);
         this.setState({ productsArray: response.data });
       })
       .catch(err => {

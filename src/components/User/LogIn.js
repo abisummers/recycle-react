@@ -33,7 +33,6 @@ class Login extends Component {
     api
       .post("/login", this.state)
       .then(res => {
-        console.log("login", res.data);
         const { onLogin } = this.props;
         onLogin(res.data.userDoc);
       })
@@ -51,8 +50,6 @@ class Login extends Component {
   render() {
     const { email, originalPassword } = this.state;
     const { currentUser } = this.props;
-    console.log(currentUser);
-
     if (currentUser) {
       return <Redirect to="/" />;
     }
